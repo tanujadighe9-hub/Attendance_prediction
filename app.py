@@ -7,7 +7,6 @@ from pathlib import Path
 
 # ============================================================
 # SYMCA ATTENDANCE PREDICTION SYSTEM
-# Final Streamlit Deployment App
 # ============================================================
 
 st.set_page_config(
@@ -25,16 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "symca_attendance_model.pkl"
 
 DATA_FILES = [
-    BASE_DIR / "symca_cleaned (1).csv",
     BASE_DIR / "symca_cleaned.csv",
-    BASE_DIR / "symca_cleaned (1)(1).csv"
+    BASE_DIR / "symca_cleaned (1).csv"
 ]
 
 DATA_PATH = next(
-    (p for p in DATA_FILES if p.exists()),
+    (file for file in DATA_FILES if file.exists()),
     None
 )
-
 
 # ============================================================
 # LOAD MODEL
@@ -42,7 +39,6 @@ DATA_PATH = next(
 
 @st.cache_resource
 def load_model():
-
     return joblib.load(MODEL_PATH)
 
 
@@ -52,49 +48,35 @@ def load_model():
 
 @st.cache_data
 def load_data(path):
-
     data = pd.read_csv(path)
 
-    data["Date"] = pd.to_datetime(
-        data["Date"],
-        errors="coerce"
-    )
-
-    data = data.sort_values(
-        [
-            "Date",
-            "Section",
-            "Start Time Minutes",
-            "Lecture_No"
-        ]
-    ).reset_index(drop=True)
+    if "Date" in data.columns:
+        data["Date"] = pd.to_datetime(
+            data["Date"],
+            errors="coerce"
+        )
 
     return data
 
 
 # ============================================================
-# FILE CHECK
+# CHECK FILES
 # ============================================================
 
 if not MODEL_PATH.exists():
-
     st.error(
-        "❌ symca_attendance_model.pkl was not found."
+        "❌ Model file not found: symca_attendance_model.pkl"
     )
-
     st.stop()
 
-
 if DATA_PATH is None:
-
     st.error(
-        "❌ Cleaned dataset was not found."
+        "❌ Dataset file not found."
     )
-
     st.info(
-        "Keep the CSV file in the same folder as app.py."
+        "Keep symca_cleaned.csv or symca_cleaned (1).csv "
+        "in the same folder as app.py."
     )
-
     st.stop()
 
 
@@ -103,18 +85,12 @@ if DATA_PATH is None:
 # ============================================================
 
 try:
-
     model = load_model()
     df = load_data(DATA_PATH)
 
 except Exception as e:
-
-    st.error(
-        "❌ Unable to load the model or dataset."
-    )
-
+    st.error("❌ Unable to load the model or dataset.")
     st.code(str(e))
-
     st.stop()
 
 
@@ -130,8 +106,6 @@ MODEL_FEATURES = list(
     )
 )
 
-
-# Exact features expected by the saved model
 EXPECTED_FEATURES = [
     "Day of Week",
     "Lecture_No",
@@ -161,33 +135,6 @@ EXPECTED_FEATURES = [
 
 
 # ============================================================
-# VALIDATE MODEL
-# ============================================================
-
-if MODEL_FEATURES:
-
-    missing_model_features = [
-        col
-        for col in EXPECTED_FEATURES
-        if col not in MODEL_FEATURES
-    ]
-
-    if missing_model_features:
-
-        st.error(
-            "The saved model features do not match "
-            "the deployment features."
-        )
-
-        st.write(
-            "Missing from model:",
-            missing_model_features
-        )
-
-        st.stop()
-
-
-# ============================================================
 # HELPER FUNCTIONS
 # ============================================================
 
@@ -200,10 +147,8 @@ def parse_time_to_minutes(time_text):
 
     if "AM" in text:
         period = "AM"
-
     elif "PM" in text:
         period = "PM"
-
     else:
         return np.nan
 
@@ -219,42 +164,31 @@ def parse_time_to_minutes(time_text):
         return np.nan
 
     try:
-
         if len(digits) <= 2:
-
             hour = int(digits)
             minute = 0
-
         elif len(digits) == 3:
-
             hour = int(digits[0])
             minute = int(digits[1:])
-
         else:
-
             hour = int(digits[:-2])
             minute = int(digits[-2:])
-
-    except Exception:
-
+    except:
         return np.nan
 
     if hour > 12 or minute >= 60:
-
         return np.nan
 
     if period == "PM" and hour != 12:
-
         hour += 12
 
-    elif period == "AM" and hour == 12:
-
+    if period == "AM" and hour == 12:
         hour = 0
 
     return hour * 60 + minute
 
 
-def yes_value(value):
+def is_yes(value):
 
     return str(value).strip().lower() in [
         "yes",
@@ -263,11 +197,24 @@ def yes_value(value):
     ]
 
 
-def get_previous_attendance(
+def attendance_status(value):
+
+    if value >= 75:
+        return "🟢 Good"
+    elif value >= 60:
+        return "🟡 Moderate"
+    else:
+        return "🔴 Low"
+
+
+def historical_features(
     section,
     subject,
     lecture_date
 ):
+
+    if "Date" not in df.columns:
+        return np.nan, np.nan, np.nan
 
     history = df[
         (df["Section"].astype(str) == str(section))
@@ -278,35 +225,17 @@ def get_previous_attendance(
     ].copy()
 
     if history.empty:
+        return np.nan, np.nan, np.nan
 
-        return {
-            "previous": np.nan,
-            "rolling": np.nan,
-            "monthly": np.nan
-        }
-
-    history = history.sort_values(
-        [
-            "Date",
-            "Start Time Minutes",
-            "Lecture_No"
-        ]
-    )
+    history = history.sort_values("Date")
 
     attendance = pd.to_numeric(
         history["Attendence Percentage"],
         errors="coerce"
-    )
-
-    attendance = attendance.dropna()
+    ).dropna()
 
     if attendance.empty:
-
-        return {
-            "previous": np.nan,
-            "rolling": np.nan,
-            "monthly": np.nan
-        }
+        return np.nan, np.nan, np.nan
 
     previous = attendance.iloc[-1]
 
@@ -323,23 +252,22 @@ def get_previous_attendance(
         errors="coerce"
     ).dropna()
 
-    monthly_avg = (
+    monthly_average = (
         monthly_attendance.mean()
         if not monthly_attendance.empty
         else np.nan
     )
 
-    return {
-        "previous": previous,
-        "rolling": rolling,
-        "monthly": monthly_avg
-    }
+    return previous, rolling, monthly_average
 
 
-def get_days_since_last_holiday(
+def days_since_holiday(
     section,
     lecture_date
 ):
+
+    if "Holiday Before/ After" not in df.columns:
+        return 0
 
     history = df[
         (df["Section"].astype(str) == str(section))
@@ -348,111 +276,97 @@ def get_days_since_last_holiday(
     ].copy()
 
     if history.empty:
+        return 0
 
-        return np.nan
-
-    holiday_rows = history[
-        history["Holiday Before/ After"]
-        .apply(yes_value)
+    holidays = history[
+        history["Holiday Before/ After"].apply(is_yes)
     ]
 
-    if holiday_rows.empty:
+    if holidays.empty:
+        return 0
 
-        return np.nan
+    last_holiday = holidays["Date"].max()
 
-    last_holiday = holiday_rows["Date"].max()
+    return max(
+        0,
+        (lecture_date - last_holiday).days
+    )
 
-    return (
-        lecture_date - last_holiday
-    ).days
 
-
-def get_consecutive_count(
+def consecutive_lecture_count(
     section,
     lecture_date,
     start_minutes
 ):
 
-    same_day = df[
-        (df["Section"].astype(str) == str(section))
-        &
-        (df["Date"] == lecture_date)
-        &
-        (
-            pd.to_numeric(
-                df["Start Time Minutes"],
-                errors="coerce"
-            )
-            < start_minutes
-        )
-    ]
+    if "Start Time Minutes" not in df.columns:
+        return 1
 
-    return len(same_day) + 1
+    starts = pd.to_numeric(
+        df["Start Time Minutes"],
+        errors="coerce"
+    )
+
+    count = len(
+        df[
+            (df["Section"].astype(str) == str(section))
+            &
+            (df["Date"] == lecture_date)
+            &
+            (starts < start_minutes)
+        ]
+    )
+
+    return count + 1
 
 
-def get_gap_since_previous_lecture(
+def lecture_gap(
     section,
     lecture_date,
     start_minutes
 ):
 
-    same_day = df[
+    if "End Time Minutes" not in df.columns:
+        return 0
+
+    day_data = df[
         (df["Section"].astype(str) == str(section))
         &
         (df["Date"] == lecture_date)
     ].copy()
 
-    if same_day.empty:
+    if day_data.empty:
+        return 0
 
-        return 0.0
-
-    same_day["Start Time Minutes"] = pd.to_numeric(
-        same_day["Start Time Minutes"],
+    day_data["Start Time Minutes"] = pd.to_numeric(
+        day_data["Start Time Minutes"],
         errors="coerce"
     )
 
-    same_day["End Time Minutes"] = pd.to_numeric(
-        same_day["End Time Minutes"],
+    day_data["End Time Minutes"] = pd.to_numeric(
+        day_data["End Time Minutes"],
         errors="coerce"
     )
 
-    previous = same_day[
-        same_day["Start Time Minutes"] < start_minutes
-    ].sort_values(
-        "Start Time Minutes"
-    )
+    previous = day_data[
+        day_data["Start Time Minutes"] < start_minutes
+    ].sort_values("Start Time Minutes")
 
     if previous.empty:
-
-        return 0.0
+        return 0
 
     previous_end = previous.iloc[-1]["End Time Minutes"]
 
     if pd.isna(previous_end):
-
-        return 0.0
-
-    gap = (
-        start_minutes - previous_end
-    ) / 60
+        return 0
 
     return max(
-        0.0,
-        round(gap, 2)
+        0,
+        round(
+            (start_minutes - previous_end) / 60,
+            2
+        )
     )
-
-
-def attendance_status(value):
-
-    if value >= 75:
-
-        return "🟢 Good"
-
-    elif value >= 60:
-
-        return "🟡 Moderate"
-
-    return "🔴 Low"
 
 
 # ============================================================
@@ -463,9 +377,9 @@ st.title(
     "🎓 SYMCA Attendance Prediction System"
 )
 
-st.caption(
-    "Machine Learning based Attendance Analytics "
-    "and Future Lecture Prediction"
+st.write(
+    "Predict the expected attendance percentage "
+    "for a lecture using the trained machine learning model."
 )
 
 
@@ -475,56 +389,38 @@ st.caption(
 
 with st.sidebar:
 
-    st.header("⚙️ Dashboard Settings")
-
-    low_threshold = st.slider(
-        "Low Attendance Threshold (%)",
-        min_value=50,
-        max_value=90,
-        value=75
-    )
-
-    st.divider()
-
-    st.subheader("🤖 Model")
+    st.header("📌 Project Information")
 
     st.write(
-        "Problem: **Regression**"
+        "**Machine Learning Problem:** Regression"
     )
 
     st.write(
-        "Target: **Attendence Percentage**"
+        "**Prediction Target:** Attendance Percentage"
     )
 
-    if hasattr(model, "named_steps"):
+    st.write(
+        f"**Dataset Records:** {len(df):,}"
+    )
 
-        final_estimator = model.named_steps.get(
-            "model"
+    if "Date" in df.columns:
+
+        st.write(
+            f"**Dataset Start:** "
+            f"{df['Date'].min().strftime('%Y-%m-%d')}"
         )
 
         st.write(
-            "Algorithm:",
-            f"**{type(final_estimator).__name__}**"
+            f"**Dataset End:** "
+            f"{df['Date'].max().strftime('%Y-%m-%d')}"
         )
 
     st.divider()
 
-    st.subheader("📁 Dataset")
-
     st.write(
-        f"Rows: **{len(df):,}**"
-    )
-
-    st.write(
-        f"Columns: **{len(df.columns)}**"
-    )
-
-    st.write(
-        f"Start: **{df['Date'].min().date()}**"
-    )
-
-    st.write(
-        f"End: **{df['Date'].max().date()}**"
+        "The model uses lecture, faculty, "
+        "academic, weather and historical "
+        "attendance information."
     )
 
 
@@ -532,11 +428,10 @@ with st.sidebar:
 # TABS
 # ============================================================
 
-tab_dashboard, tab_predict, tab_time, tab_subject, tab_impact = st.tabs(
+tab_dashboard, tab_predict, tab_subject, tab_impact = st.tabs(
     [
         "📊 Dashboard",
         "🔮 Predict Attendance",
-        "🕐 Time Analysis",
         "📚 Subject Analysis",
         "🧪 Impact Analysis"
     ]
@@ -544,56 +439,51 @@ tab_dashboard, tab_predict, tab_time, tab_subject, tab_impact = st.tabs(
 
 
 # ============================================================
-# TAB 1 - DASHBOARD
+# DASHBOARD
 # ============================================================
 
 with tab_dashboard:
 
-    st.header(
-        "📊 Attendance Overview"
-    )
+    st.header("📊 Attendance Dashboard")
 
     attendance = pd.to_numeric(
         df["Attendence Percentage"],
         errors="coerce"
-    )
+    ).dropna()
 
     average_attendance = attendance.mean()
     highest_attendance = attendance.max()
     lowest_attendance = attendance.min()
 
-    low_count = int(
-        (attendance < low_threshold).sum()
-    )
+    low_attendance_count = (
+        attendance < 75
+    ).sum()
 
-    c1, c2, c3, c4 = st.columns(4)
 
-    with c1:
+    col1, col2, col3, col4 = st.columns(4)
 
+    with col1:
         st.metric(
             "📈 Average Attendance",
             f"{average_attendance:.2f}%"
         )
 
-    with c2:
-
+    with col2:
         st.metric(
             "⬆️ Highest Attendance",
             f"{highest_attendance:.2f}%"
         )
 
-    with c3:
-
+    with col3:
         st.metric(
             "⬇️ Lowest Attendance",
             f"{lowest_attendance:.2f}%"
         )
 
-    with c4:
-
+    with col4:
         st.metric(
             "⚠️ Low Attendance Lectures",
-            low_count
+            int(low_attendance_count)
         )
 
 
@@ -622,68 +512,67 @@ with tab_dashboard:
 
 
     # --------------------------------------------------------
-    # ATTENDANCE BY SECTION
+    # SECTION ANALYSIS
     # --------------------------------------------------------
 
     st.subheader(
-        "👥 Attendance by Section"
+        "👥 Section-wise Attendance"
     )
 
-    section_avg = (
+    section_average = (
         df.groupby("Section")[
             "Attendence Percentage"
         ]
         .mean()
-        .sort_values(
-            ascending=False
-        )
         .round(2)
     )
 
     st.bar_chart(
-        section_avg,
+        section_average,
         use_container_width=True
     )
 
 
     # --------------------------------------------------------
-    # LOW ATTENDANCE RECORDS
+    # LOW ATTENDANCE
     # --------------------------------------------------------
 
     st.subheader(
-        "⚠️ Low Attendance Lectures"
+        "⚠️ Low Attendance Records"
     )
 
-    low_df = df[
-        df["Attendence Percentage"]
-        < low_threshold
+    low_data = df[
+        pd.to_numeric(
+            df["Attendence Percentage"],
+            errors="coerce"
+        ) < 75
     ].copy()
 
-    if not low_df.empty:
+    if not low_data.empty:
 
-        display_cols = [
+        columns = [
             "Date",
             "Section",
             "Subject",
             "Lecture_No",
-            "Start_Time",
             "Attendence Percentage"
         ]
 
-        display_cols = [
-            c
-            for c in display_cols
-            if c in low_df.columns
+        columns = [
+            col
+            for col in columns
+            if col in low_data.columns
         ]
 
-        low_df["Date"] = low_df[
-            "Date"
-        ].dt.strftime("%Y-%m-%d")
+        if "Date" in low_data.columns:
+
+            low_data["Date"] = (
+                low_data["Date"]
+                .dt.strftime("%Y-%m-%d")
+            )
 
         st.dataframe(
-            low_df[
-                display_cols
-            ]
+            low_data[columns]
             .sort_values(
                 "Attendence Percentage"
             )
@@ -694,25 +583,27 @@ with tab_dashboard:
 
 
 # ============================================================
-# TAB 2 - PREDICTION
+# PREDICTION
 # ============================================================
 
 with tab_predict:
 
     st.header(
-        "🔮 Predict Upcoming Lecture Attendance"
+        "🔮 Predict Attendance"
     )
 
     st.info(
-        "Enter information known before the lecture. "
-        "Historical attendance features are calculated "
-        "automatically from previous lectures."
+        "Enter the lecture information and click "
+        "**Predict Attendance**. Historical attendance "
+        "features are calculated automatically."
     )
 
 
-    with st.form(
-        "prediction_form"
-    ):
+    with st.form("attendance_prediction_form"):
+
+        # ----------------------------------------------------
+        # LECTURE INFORMATION
+        # ----------------------------------------------------
 
         st.subheader(
             "1. Lecture Information"
@@ -722,19 +613,20 @@ with tab_predict:
 
         with col1:
 
-            default_date = (
+            latest_date = (
                 df["Date"].max().date()
-                + pd.Timedelta(days=1)
+                if "Date" in df.columns
+                else pd.Timestamp.today().date()
             )
 
-            lecture_date_input = st.date_input(
+            lecture_date = st.date_input(
                 "Lecture Date",
-                value=default_date
+                value=latest_date
             )
 
         with col2:
 
-            section_options = sorted(
+            sections = sorted(
                 df["Section"]
                 .dropna()
                 .astype(str)
@@ -743,7 +635,7 @@ with tab_predict:
 
             section = st.selectbox(
                 "Section",
-                section_options
+                sections
             )
 
         with col3:
@@ -761,7 +653,7 @@ with tab_predict:
 
         with col1:
 
-            subject_options = sorted(
+            subjects = sorted(
                 df["Subject"]
                 .dropna()
                 .astype(str)
@@ -770,12 +662,12 @@ with tab_predict:
 
             subject = st.selectbox(
                 "Subject",
-                subject_options
+                subjects
             )
 
         with col2:
 
-            faculty_options = sorted(
+            faculty_ids = sorted(
                 df["Faculty_ID"]
                 .dropna()
                 .astype(str)
@@ -784,12 +676,12 @@ with tab_predict:
 
             faculty_id = st.selectbox(
                 "Faculty ID",
-                faculty_options
+                faculty_ids
             )
 
         with col3:
 
-            classroom_options = sorted(
+            classrooms = sorted(
                 df["Classroom"]
                 .dropna()
                 .astype(str)
@@ -798,9 +690,13 @@ with tab_predict:
 
             classroom = st.selectbox(
                 "Classroom",
-                classroom_options
+                classrooms
             )
 
+
+        # ----------------------------------------------------
+        # SCHEDULE
+        # ----------------------------------------------------
 
         st.subheader(
             "2. Lecture Schedule"
@@ -812,19 +708,19 @@ with tab_predict:
 
             start_time = st.text_input(
                 "Start Time",
-                value="09.15 AM"
+                "09.15 AM"
             )
 
         with col2:
 
             end_time = st.text_input(
                 "End Time",
-                value="10.15 AM"
+                "10.15 AM"
             )
 
         with col3:
 
-            practical_options = sorted(
+            practical_theory_options = sorted(
                 df["Practical/ Theory"]
                 .dropna()
                 .astype(str)
@@ -833,9 +729,13 @@ with tab_predict:
 
             practical_theory = st.selectbox(
                 "Practical / Theory",
-                practical_options
+                practical_theory_options
             )
 
+
+        # ----------------------------------------------------
+        # CLASS AND FACULTY
+        # ----------------------------------------------------
 
         st.subheader(
             "3. Class & Faculty Details"
@@ -845,35 +745,39 @@ with tab_predict:
 
         with col1:
 
-            median_students = pd.to_numeric(
+            student_values = pd.to_numeric(
                 df["Total Enrolled Students"],
                 errors="coerce"
-            ).median()
+            ).dropna()
+
+            default_students = int(
+                student_values.median()
+            )
 
             total_students = st.number_input(
                 "Total Enrolled Students",
                 min_value=1,
                 max_value=500,
-                value=int(
-                    round(median_students)
-                ),
+                value=default_students,
                 step=1
             )
 
         with col2:
 
-            median_experience = pd.to_numeric(
+            experience_values = pd.to_numeric(
                 df["Faculty Experience"],
                 errors="coerce"
-            ).median()
+            ).dropna()
+
+            default_experience = int(
+                experience_values.median()
+            )
 
             faculty_experience = st.number_input(
                 "Faculty Experience",
                 min_value=0,
                 max_value=50,
-                value=int(
-                    round(median_experience)
-                ),
+                value=default_experience,
                 step=1
             )
 
@@ -891,6 +795,10 @@ with tab_predict:
                 weather_options
             )
 
+
+        # ----------------------------------------------------
+        # ACADEMIC / EVENT
+        # ----------------------------------------------------
 
         st.subheader(
             "4. Academic / Event Information"
@@ -926,15 +834,19 @@ with tab_predict:
         )
 
 
+    # ========================================================
+    # PREDICTION PROCESS
+    # ========================================================
+
     if predict_button:
 
         lecture_date = pd.Timestamp(
-            lecture_date_input
+            lecture_date
         )
 
 
         # ----------------------------------------------------
-        # TIME
+        # TIME CONVERSION
         # ----------------------------------------------------
 
         start_minutes = parse_time_to_minutes(
@@ -945,32 +857,29 @@ with tab_predict:
             end_time
         )
 
-
         if pd.isna(start_minutes):
 
             st.error(
-                "❌ Invalid Start Time. "
+                "❌ Invalid start time. "
                 "Example: 09.15 AM"
             )
 
             st.stop()
 
-
         if pd.isna(end_minutes):
 
             st.error(
-                "❌ Invalid End Time. "
+                "❌ Invalid end time. "
                 "Example: 10.15 AM"
             )
 
             st.stop()
 
-
         if end_minutes <= start_minutes:
 
             st.error(
-                "❌ End Time must be later "
-                "than Start Time."
+                "❌ End time must be later "
+                "than start time."
             )
 
             st.stop()
@@ -986,16 +895,6 @@ with tab_predict:
             lecture_date - semester_start
         ).days + 1
 
-        if day_of_semester < 1:
-
-            st.error(
-                "Lecture date cannot be before "
-                "the start of the dataset."
-            )
-
-            st.stop()
-
-
         day_of_week = (
             lecture_date.day_name()
         )
@@ -1005,56 +904,59 @@ with tab_predict:
         # HISTORICAL FEATURES
         # ----------------------------------------------------
 
-        history = get_previous_attendance(
-            section,
-            subject,
-            lecture_date
-        )
-
-
-        days_since_holiday = (
-            get_days_since_last_holiday(
+        previous_attendance, rolling_average, monthly_average = (
+            historical_features(
                 section,
+                subject,
                 lecture_date
             )
         )
 
 
-        consecutive_count = (
-            get_consecutive_count(
-                section,
-                lecture_date,
-                start_minutes
-            )
+        gap = lecture_gap(
+            section,
+            lecture_date,
+            start_minutes
         )
 
 
-        gap = (
-            get_gap_since_previous_lecture(
-                section,
-                lecture_date,
-                start_minutes
-            )
+        consecutive_count = consecutive_lecture_count(
+            section,
+            lecture_date,
+            start_minutes
         )
 
 
-        lunch_slot = (
-            "Before Lunch"
-            if start_minutes < 780
-            else "After Lunch"
+        holiday_gap = days_since_holiday(
+            section,
+            lecture_date
         )
 
+
+        # ----------------------------------------------------
+        # LUNCH SLOT
+        # ----------------------------------------------------
+
+        if start_minutes < 780:
+            lunch_slot = "Before Lunch"
+        else:
+            lunch_slot = "After Lunch"
+
+
+        # ----------------------------------------------------
+        # WEEK BEFORE EXAM
+        # ----------------------------------------------------
 
         week_before_exam = int(
-            yes_value(internal_test)
+            is_yes(internal_test)
         )
 
 
         # ----------------------------------------------------
-        # CREATE EXACT MODEL INPUT
+        # CREATE MODEL INPUT
         # ----------------------------------------------------
 
-        prediction_input = pd.DataFrame([{
+        input_data = pd.DataFrame([{
 
             "Day of Week":
                 day_of_week,
@@ -1078,7 +980,7 @@ with tab_predict:
                 int(total_students),
 
             "Previous Lecture Attendence":
-                history["previous"],
+                previous_attendance,
 
             "Gap Since Previous Lecture":
                 gap,
@@ -1111,16 +1013,16 @@ with tab_predict:
                 int(day_of_semester),
 
             "Days Since Last Holiday":
-                days_since_holiday,
+                holiday_gap,
 
             "Consecutive Lecture Count (Day)":
                 int(consecutive_count),
 
             "Monthly Avg Attendance":
-                history["monthly"],
+                monthly_average,
 
             "Rolling Avg Attendance (Prev 3)":
-                history["rolling"],
+                rolling_average,
 
             "Lunch Time Slot":
                 lunch_slot,
@@ -1132,30 +1034,48 @@ with tab_predict:
 
 
         # ----------------------------------------------------
-        # EXACT ORDER USED BY TRAINED MODEL
+        # MODEL FEATURE ORDER
         # ----------------------------------------------------
 
         if MODEL_FEATURES:
 
-            prediction_input = prediction_input[
+            missing_features = [
+                col
+                for col in MODEL_FEATURES
+                if col not in input_data.columns
+            ]
+
+            if missing_features:
+
+                st.error(
+                    "❌ Required model features are missing."
+                )
+
+                st.write(
+                    missing_features
+                )
+
+                st.stop()
+
+            input_data = input_data[
                 MODEL_FEATURES
             ]
 
         else:
 
-            prediction_input = prediction_input[
+            input_data = input_data[
                 EXPECTED_FEATURES
             ]
 
 
         # ----------------------------------------------------
-        # PREDICTION
+        # PREDICT
         # ----------------------------------------------------
 
         try:
 
             prediction = model.predict(
-                prediction_input
+                input_data
             )[0]
 
             prediction = float(
@@ -1178,51 +1098,58 @@ with tab_predict:
                 - expected_present
             )
 
+
             status = attendance_status(
                 prediction
             )
 
 
             # ------------------------------------------------
-            # RESULT
+            # SUCCESS
             # ------------------------------------------------
 
             st.success(
                 "✅ Prediction generated successfully!"
             )
 
+
             st.subheader(
                 "🎯 Predicted Attendance"
             )
 
-            c1, c2, c3, c4 = st.columns(4)
 
-            with c1:
+            col1, col2, col3, col4 = st.columns(4)
+
+
+            with col1:
 
                 st.metric(
                     "Expected Attendance",
                     f"{prediction:.2f}%"
                 )
 
-            with c2:
+
+            with col2:
 
                 st.metric(
-                    "Status",
+                    "Attendance Status",
                     status
                 )
 
-            with c3:
+
+            with col3:
 
                 st.metric(
                     "Expected Present",
-                    f"{expected_present} students"
+                    f"{expected_present}"
                 )
 
-            with c4:
+
+            with col4:
 
                 st.metric(
                     "Expected Absent",
-                    f"{expected_absent} students"
+                    f"{expected_absent}"
                 )
 
 
@@ -1231,47 +1158,64 @@ with tab_predict:
             )
 
 
-            if prediction >= low_threshold:
+            # ------------------------------------------------
+            # INTERPRETATION
+            # ------------------------------------------------
+
+            if prediction >= 75:
 
                 st.success(
-                    f"Expected attendance is above "
-                    f"the {low_threshold}% threshold."
+                    "🟢 The predicted attendance is "
+                    "above the 75% attendance threshold."
+                )
+
+            elif prediction >= 60:
+
+                st.warning(
+                    "🟡 The predicted attendance is "
+                    "moderate and close to the threshold."
                 )
 
             else:
 
-                st.warning(
-                    f"⚠️ Expected attendance is below "
-                    f"the {low_threshold}% threshold."
+                st.error(
+                    "🔴 The predicted attendance is "
+                    "below the 75% attendance threshold."
                 )
 
 
             # ------------------------------------------------
-            # PREDICTION DETAILS
+            # DETAILS
             # ------------------------------------------------
 
             st.subheader(
                 "📋 Prediction Details"
             )
 
+
             details = pd.DataFrame({
 
-                "Item": [
+                "Feature": [
+
                     "Lecture Date",
                     "Day",
                     "Subject",
                     "Section",
                     "Faculty",
+                    "Classroom",
                     "Lecture Time",
                     "Practical / Theory",
+                    "Total Students",
+                    "Faculty Experience",
+                    "Weather",
                     "Internal Test Week",
                     "Holiday Before / After",
-                    "Weather",
+                    "Special Event",
                     "Previous Attendance",
-                    "Rolling Previous-3 Average",
-                    "Monthly Historical Average",
-                    "Gap Since Previous Lecture",
-                    "Consecutive Lecture Count"
+                    "Rolling Previous 3 Average",
+                    "Monthly Average",
+                    "Days Since Last Holiday"
+
                 ],
 
                 "Value": [
@@ -1288,47 +1232,48 @@ with tab_predict:
 
                     faculty_id,
 
+                    classroom,
+
                     f"{start_time} - {end_time}",
 
                     practical_theory,
+
+                    total_students,
+
+                    faculty_experience,
+
+                    weather,
 
                     internal_test,
 
                     holiday,
 
-                    weather,
+                    special_event,
 
                     (
-                        f"{history['previous']:.2f}%"
-                        if pd.notna(
-                            history["previous"]
-                        )
+                        f"{previous_attendance:.2f}%"
+                        if pd.notna(previous_attendance)
                         else "Not available"
                     ),
 
                     (
-                        f"{history['rolling']:.2f}%"
-                        if pd.notna(
-                            history["rolling"]
-                        )
+                        f"{rolling_average:.2f}%"
+                        if pd.notna(rolling_average)
                         else "Not available"
                     ),
 
                     (
-                        f"{history['monthly']:.2f}%"
-                        if pd.notna(
-                            history["monthly"]
-                        )
+                        f"{monthly_average:.2f}%"
+                        if pd.notna(monthly_average)
                         else "Not available"
                     ),
 
-                    f"{gap:.2f} hours",
-
-                    consecutive_count
+                    holiday_gap
 
                 ]
 
             })
+
 
             st.dataframe(
                 details,
@@ -1337,12 +1282,16 @@ with tab_predict:
             )
 
 
+            # ------------------------------------------------
+            # MODEL INPUT
+            # ------------------------------------------------
+
             with st.expander(
-                "🔍 View exact model input"
+                "🔍 View Model Input"
             ):
 
                 st.dataframe(
-                    prediction_input,
+                    input_data,
                     use_container_width=True,
                     hide_index=True
                 )
@@ -1358,156 +1307,9 @@ with tab_predict:
                 str(e)
             )
 
-            st.warning(
-                "The saved model expects a specific set "
-                "of features. Check the model and dataset."
-            )
-
 
 # ============================================================
-# TAB 3 - TIME ANALYSIS
-# ============================================================
-
-with tab_time:
-
-    st.header(
-        "🕐 Attendance by Time Slot"
-    )
-
-    time_df = df.copy()
-
-    time_df["Start Time Minutes"] = pd.to_numeric(
-        time_df["Start Time Minutes"],
-        errors="coerce"
-    )
-
-    time_df = time_df.dropna(
-        subset=["Start Time Minutes"]
-    )
-
-    time_analysis = (
-        time_df.groupby(
-            "Start Time Minutes"
-        )[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .sort_index()
-        .round(2)
-    )
-
-    if not time_analysis.empty:
-
-        time_labels = {}
-
-        for minutes in time_analysis.index:
-
-            hour = int(minutes // 60)
-            minute = int(minutes % 60)
-
-            if hour == 0:
-                display_hour = 12
-                period = "AM"
-
-            elif hour < 12:
-                display_hour = hour
-                period = "AM"
-
-            elif hour == 12:
-                display_hour = 12
-                period = "PM"
-
-            else:
-                display_hour = hour - 12
-                period = "PM"
-
-            time_labels[minutes] = (
-                f"{display_hour:02d}:{minute:02d} {period}"
-            )
-
-        time_chart = time_analysis.rename(
-            index=time_labels
-        )
-
-        st.bar_chart(
-            time_chart,
-            use_container_width=True
-        )
-
-
-        lowest_time = time_analysis.idxmin()
-
-        highest_time = time_analysis.idxmax()
-
-        c1, c2 = st.columns(2)
-
-        with c1:
-
-            st.metric(
-                "⚠️ Lowest Attendance Slot",
-                time_labels[lowest_time],
-                f"{time_analysis[lowest_time]:.2f}%"
-            )
-
-        with c2:
-
-            st.metric(
-                "🟢 Highest Attendance Slot",
-                time_labels[highest_time],
-                f"{time_analysis[highest_time]:.2f}%"
-            )
-
-
-        table = pd.DataFrame({
-
-            "Time Slot":
-                [
-                    time_labels[x]
-                    for x in time_analysis.index
-                ],
-
-            "Average Attendance (%)":
-                time_analysis.values
-
-        })
-
-        table["Status"] = table[
-            "Average Attendance (%)"
-        ].apply(
-            attendance_status
-        )
-
-        st.dataframe(
-            table,
-            use_container_width=True,
-            hide_index=True
-        )
-
-
-    # --------------------------------------------------------
-    # BEFORE / AFTER LUNCH
-    # --------------------------------------------------------
-
-    st.subheader(
-        "🍱 Before Lunch vs After Lunch"
-    )
-
-    lunch_analysis = (
-        df.groupby("Lunch Time Slot")[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .round(2)
-    )
-
-    st.bar_chart(
-        lunch_analysis,
-        use_container_width=True
-    )
-
-
-# ============================================================
-# TAB 4 - SUBJECT ANALYSIS
+# SUBJECT ANALYSIS
 # ============================================================
 
 with tab_subject:
@@ -1515,6 +1317,7 @@ with tab_subject:
     st.header(
         "📚 Subject-wise Attendance Analysis"
     )
+
 
     subject_analysis = (
         df.groupby("Subject")[
@@ -1530,17 +1333,18 @@ with tab_subject:
         .round(2)
     )
 
-    subject_chart = subject_analysis[
-        "mean"
-    ]
 
     st.bar_chart(
-        subject_chart,
+        subject_analysis["mean"],
         use_container_width=True
     )
 
 
-    subject_table = subject_analysis.reset_index()
+    subject_table = (
+        subject_analysis
+        .reset_index()
+    )
+
 
     subject_table.columns = [
         "Subject",
@@ -1548,13 +1352,12 @@ with tab_subject:
         "Lecture Count"
     ]
 
+
     subject_table["Status"] = (
         subject_table[
             "Average Attendance (%)"
         ]
-        .apply(
-            attendance_status
-        )
+        .apply(attendance_status)
     )
 
 
@@ -1565,34 +1368,30 @@ with tab_subject:
     )
 
 
-    # --------------------------------------------------------
-    # LOWEST SUBJECT
-    # --------------------------------------------------------
-
     if not subject_analysis.empty:
 
         lowest_subject = (
-            subject_analysis[
-                "mean"
-            ].idxmin()
+            subject_analysis["mean"]
+            .idxmin()
         )
 
         lowest_value = (
-            subject_analysis.loc[
+            subject_analysis
+            .loc[
                 lowest_subject,
                 "mean"
             ]
         )
 
         st.warning(
-            f"⚠️ Subject with lowest historical "
-            f"attendance: **{lowest_subject}** "
+            f"⚠️ Lowest historical attendance: "
+            f"**{lowest_subject}** "
             f"({lowest_value:.2f}%)"
         )
 
 
 # ============================================================
-# TAB 5 - IMPACT ANALYSIS
+# IMPACT ANALYSIS
 # ============================================================
 
 with tab_impact:
@@ -1602,71 +1401,35 @@ with tab_impact:
     )
 
     st.caption(
-        "These are historical attendance differences "
-        "observed in the dataset. They should not be "
-        "interpreted as guaranteed causal effects."
+        "These charts show historical differences "
+        "in the dataset. They do not prove causation."
     )
 
 
     # --------------------------------------------------------
-    # INTERNAL TEST WEEK
+    # INTERNAL TEST
     # --------------------------------------------------------
 
     st.subheader(
         "📝 Internal Test Week"
     )
 
-    test_analysis = (
-        df.groupby(
-            "Internal Test Week"
-        )[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .round(2)
-    )
+    if "Internal Test Week" in df.columns:
 
-    st.bar_chart(
-        test_analysis,
-        use_container_width=True
-    )
+        test_analysis = (
+            df.groupby(
+                "Internal Test Week"
+            )[
+                "Attendence Percentage"
+            ]
+            .mean()
+            .round(2)
+        )
 
-
-    if len(test_analysis) >= 2:
-
-        try:
-
-            normal = test_analysis["No"]
-            test = test_analysis["Yes"]
-
-            difference = test - normal
-
-            c1, c2, c3 = st.columns(3)
-
-            with c1:
-
-                st.metric(
-                    "Normal Week",
-                    f"{normal:.2f}%"
-                )
-
-            with c2:
-
-                st.metric(
-                    "Internal Test Week",
-                    f"{test:.2f}%"
-                )
-
-            with c3:
-
-                st.metric(
-                    "Difference",
-                    f"{difference:+.2f}%"
-                )
-
-        except KeyError:
-
-            pass
+        st.bar_chart(
+            test_analysis,
+            use_container_width=True
+        )
 
 
     # --------------------------------------------------------
@@ -1677,65 +1440,22 @@ with tab_impact:
         "🏖️ Holiday Before / After"
     )
 
-    holiday_analysis = (
-        df.groupby(
-            "Holiday Before/ After"
-        )[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .round(2)
-    )
+    if "Holiday Before/ After" in df.columns:
 
-    st.bar_chart(
-        holiday_analysis,
-        use_container_width=True
-    )
+        holiday_analysis = (
+            df.groupby(
+                "Holiday Before/ After"
+            )[
+                "Attendence Percentage"
+            ]
+            .mean()
+            .round(2)
+        )
 
-
-    if len(holiday_analysis) >= 2:
-
-        try:
-
-            normal_holiday = (
-                holiday_analysis["No"]
-            )
-
-            holiday_value = (
-                holiday_analysis["Yes"]
-            )
-
-            holiday_difference = (
-                holiday_value
-                - normal_holiday
-            )
-
-            c1, c2, c3 = st.columns(3)
-
-            with c1:
-
-                st.metric(
-                    "Normal",
-                    f"{normal_holiday:.2f}%"
-                )
-
-            with c2:
-
-                st.metric(
-                    "Holiday Related",
-                    f"{holiday_value:.2f}%"
-                )
-
-            with c3:
-
-                st.metric(
-                    "Difference",
-                    f"{holiday_difference:+.2f}%"
-                )
-
-        except KeyError:
-
-            pass
+        st.bar_chart(
+            holiday_analysis,
+            use_container_width=True
+        )
 
 
     # --------------------------------------------------------
@@ -1746,20 +1466,22 @@ with tab_impact:
         "🎉 Special Event"
     )
 
-    event_analysis = (
-        df.groupby(
-            "Special Event"
-        )[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .round(2)
-    )
+    if "Special Event" in df.columns:
 
-    st.bar_chart(
-        event_analysis,
-        use_container_width=True
-    )
+        event_analysis = (
+            df.groupby(
+                "Special Event"
+            )[
+                "Attendence Percentage"
+            ]
+            .mean()
+            .round(2)
+        )
+
+        st.bar_chart(
+            event_analysis,
+            use_container_width=True
+        )
 
 
     # --------------------------------------------------------
@@ -1770,23 +1492,25 @@ with tab_impact:
         "🌦️ Weather-wise Attendance"
     )
 
-    weather_analysis = (
-        df.groupby(
-            "Weather"
-        )[
-            "Attendence Percentage"
-        ]
-        .mean()
-        .sort_values(
-            ascending=False
-        )
-        .round(2)
-    )
+    if "Weather" in df.columns:
 
-    st.bar_chart(
-        weather_analysis,
-        use_container_width=True
-    )
+        weather_analysis = (
+            df.groupby(
+                "Weather"
+            )[
+                "Attendence Percentage"
+            ]
+            .mean()
+            .sort_values(
+                ascending=False
+            )
+            .round(2)
+        )
+
+        st.bar_chart(
+            weather_analysis,
+            use_container_width=True
+        )
 
 
 # ============================================================
