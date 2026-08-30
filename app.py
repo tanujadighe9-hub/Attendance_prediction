@@ -16,12 +16,16 @@ st.set_page_config(
 )
 
 BASE_DIR = Path(__file__).resolve().parent
+
 MODEL_PATH = BASE_DIR / "symca_attendance_model.pkl"
-DATA_PATH = BASE_DIR / "symca_cleaned.csv"
+
+# Your GitHub file is named:
+# symca_cleaned (1).csv
+DATA_PATH = BASE_DIR / "symca_cleaned (1).csv"
 
 
 # ============================================================
-# LOAD MODEL AND DATA
+# LOAD MODEL
 # ============================================================
 
 @st.cache_resource
@@ -29,28 +33,63 @@ def load_model():
     return joblib.load(MODEL_PATH)
 
 
+# ============================================================
+# LOAD DATA
+# ============================================================
+
 @st.cache_data
 def load_data():
+
     df = pd.read_csv(DATA_PATH)
 
     if "Date" in df.columns:
-        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        df["Date"] = pd.to_datetime(
+            df["Date"],
+            errors="coerce"
+        )
 
     return df
 
 
+# ============================================================
+# CHECK FILES
+# ============================================================
+
+if not MODEL_PATH.exists():
+
+    st.error(
+        "Model file not found: symca_attendance_model.pkl"
+    )
+
+    st.stop()
+
+
+if not DATA_PATH.exists():
+
+    st.error(
+        "Dataset file not found: symca_cleaned (1).csv"
+    )
+
+    st.stop()
+
+
+# ============================================================
+# LOAD
+# ============================================================
+
 try:
+
     model = load_model()
     df = load_data()
 
 except Exception as e:
-    st.error("Unable to load the model or dataset.")
-    st.code(str(e))
-    st.info(
-        "Make sure these files are in the same folder as app.py:\n"
-        "1. symca_attendance_model.pkl\n"
-        "2. symca_cleaned.csv"
+
+    st.error(
+        "Unable to load the model or dataset."
     )
+
+    st.code(str(e))
+
     st.stop()
 
 
@@ -59,6 +98,7 @@ except Exception as e:
 # ============================================================
 
 MODEL_FEATURES = [
+
     "Day of Week",
     "Lecture_No",
     "Subject",
@@ -83,6 +123,7 @@ MODEL_FEATURES = [
     "Rolling Avg Attendance (Prev 3)",
     "Lunch Time Slot",
     "Week Before Exam"
+
 ]
 
 TARGET = "Attendence Percentage"
@@ -101,14 +142,25 @@ def parse_time_to_minutes(time_text):
 
     if "AM" in text:
         period = "AM"
+
     elif "PM" in text:
         period = "PM"
+
     else:
         return np.nan
 
-    text = text.replace("AM", "").replace("PM", "").strip()
+    text = (
+        text
+        .replace("AM", "")
+        .replace("PM", "")
+        .strip()
+    )
 
-    digits = re.sub(r"[^0-9]", "", text)
+    digits = re.sub(
+        r"[^0-9]",
+        "",
+        text
+    )
 
     if not digits:
         return np.nan
@@ -116,18 +168,22 @@ def parse_time_to_minutes(time_text):
     try:
 
         if len(digits) <= 2:
+
             hour = int(digits)
             minute = 0
 
         elif len(digits) == 3:
+
             hour = int(digits[0])
             minute = int(digits[1:])
 
         else:
+
             hour = int(digits[:-2])
             minute = int(digits[-2:])
 
-    except ValueError:
+    except:
+
         return np.nan
 
     if hour > 12 or minute >= 60:
@@ -136,7 +192,7 @@ def parse_time_to_minutes(time_text):
     if period == "PM" and hour != 12:
         hour += 12
 
-    if period == "AM" and hour == 12:
+    elif period == "AM" and hour == 12:
         hour = 0
 
     return hour * 60 + minute
@@ -150,26 +206,42 @@ def yes_no_to_int(value):
     )
 
 
-def get_history(section, subject, lecture_date):
+# ============================================================
+# HISTORICAL FEATURES
+# ============================================================
+
+def get_history(
+    section,
+    subject,
+    lecture_date
+):
 
     history = df[
         (df["Section"].astype(str) == str(section))
-        & (df["Subject"].astype(str) == str(subject))
-        & (df["Date"] < lecture_date)
+        &
+        (df["Subject"].astype(str) == str(subject))
+        &
+        (df["Date"] < lecture_date)
     ].copy()
-
-    history = history.sort_values(
-        ["Date", "Start Time Minutes", "Lecture_No"]
-    )
 
     if history.empty:
 
         return {
+
             "previous_attendance": np.nan,
             "gap": 0,
             "rolling_prev3": np.nan,
             "monthly_avg": np.nan
+
         }
+
+    history = history.sort_values(
+        [
+            "Date",
+            "Start Time Minutes",
+            "Lecture_No"
+        ]
+    )
 
     attendance = pd.to_numeric(
         history[TARGET],
@@ -189,7 +261,8 @@ def get_history(section, subject, lecture_date):
 
     monthly_data = history[
         (history["Date"].dt.year == lecture_date.year)
-        & (history["Date"].dt.month == lecture_date.month)
+        &
+        (history["Date"].dt.month == lecture_date.month)
     ]
 
     monthly_avg = pd.to_numeric(
@@ -198,18 +271,35 @@ def get_history(section, subject, lecture_date):
     ).mean()
 
     return {
-        "previous_attendance": previous_attendance,
-        "gap": gap,
-        "rolling_prev3": rolling_prev3,
-        "monthly_avg": monthly_avg
+
+        "previous_attendance":
+            previous_attendance,
+
+        "gap":
+            gap,
+
+        "rolling_prev3":
+            rolling_prev3,
+
+        "monthly_avg":
+            monthly_avg
+
     }
 
 
-def get_days_since_holiday(section, lecture_date):
+# ============================================================
+# DAYS SINCE LAST HOLIDAY
+# ============================================================
+
+def get_days_since_holiday(
+    section,
+    lecture_date
+):
 
     history = df[
         (df["Section"].astype(str) == str(section))
-        & (df["Date"] < lecture_date)
+        &
+        (df["Date"] < lecture_date)
     ].copy()
 
     if history.empty:
@@ -218,20 +308,29 @@ def get_days_since_holiday(section, lecture_date):
     holiday_rows = history[
         history["Holiday Before/ After"]
         .astype(str)
+        .str.strip()
         .str.lower()
-        .isin(["yes", "true", "1"])
+        .isin(
+            ["yes", "true", "1"]
+        )
     ]
 
     if holiday_rows.empty:
         return np.nan
 
-    last_holiday = holiday_rows["Date"].max()
+    last_holiday = holiday_rows[
+        "Date"
+    ].max()
 
     return max(
         0,
         (lecture_date - last_holiday).days
     )
 
+
+# ============================================================
+# CONSECUTIVE LECTURE COUNT
+# ============================================================
 
 def get_consecutive_lecture_count(
     section,
@@ -241,7 +340,8 @@ def get_consecutive_lecture_count(
 
     same_day = df[
         (df["Section"].astype(str) == str(section))
-        & (df["Date"] == lecture_date)
+        &
+        (df["Date"] == lecture_date)
     ].copy()
 
     if same_day.empty:
@@ -261,17 +361,19 @@ def get_consecutive_lecture_count(
 # TITLE
 # ============================================================
 
-st.title("🎓 SYMCA Attendance Prediction System")
+st.title(
+    "🎓 SYMCA Attendance Prediction System"
+)
 
 st.write(
     "Predict the expected attendance percentage "
-    "for an upcoming lecture."
+    "for a lecture using the trained machine "
+    "learning model."
 )
 
 st.info(
-    "This application uses the trained regression model. "
-    "`Students Present` is not used as an input because it "
-    "is only known after attendance is recorded."
+    "Enter the lecture details below and click "
+    "`Predict Attendance`."
 )
 
 
@@ -283,9 +385,17 @@ with st.sidebar:
 
     st.header("📌 Model Information")
 
-    st.write("**Problem:** Regression")
-    st.write("**Target:** Attendence Percentage")
-    st.write("**Model:** Trained sklearn Pipeline")
+    st.write(
+        "**Problem:** Regression"
+    )
+
+    st.write(
+        "**Target:** Attendence Percentage"
+    )
+
+    st.write(
+        "**Model:** Random Forest Regressor"
+    )
 
     st.write(
         "**Dataset Rows:**",
@@ -295,10 +405,13 @@ with st.sidebar:
     if "Date" in df.columns:
 
         st.write(
-            "**Dataset Period:**",
-            f"{df['Date'].min().date()} "
-            f"to "
-            f"{df['Date'].max().date()}"
+            "**Dataset Start:**",
+            str(df["Date"].min().date())
+        )
+
+        st.write(
+            "**Dataset End:**",
+            str(df["Date"].max().date())
         )
 
 
@@ -306,9 +419,13 @@ with st.sidebar:
 # INPUT FORM
 # ============================================================
 
-with st.form("attendance_form"):
+with st.form(
+    "attendance_prediction_form"
+):
 
-    st.subheader("1. Lecture Information")
+    st.subheader(
+        "1. Lecture Information"
+    )
 
     col1, col2, col3 = st.columns(3)
 
@@ -342,6 +459,7 @@ with st.form("attendance_form"):
             value=1,
             step=1
         )
+
 
     col1, col2, col3 = st.columns(3)
 
@@ -392,7 +510,9 @@ with st.form("attendance_form"):
     # SCHEDULE
     # ========================================================
 
-    st.subheader("2. Lecture Schedule")
+    st.subheader(
+        "2. Lecture Schedule"
+    )
 
     col1, col2, col3 = st.columns(3)
 
@@ -429,43 +549,39 @@ with st.form("attendance_form"):
     # CLASS DETAILS
     # ========================================================
 
-    st.subheader("3. Class & Faculty Details")
+    st.subheader(
+        "3. Class & Faculty Details"
+    )
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
 
-        default_students = int(
-            pd.to_numeric(
-                df["Total Enrolled Students"],
-                errors="coerce"
-            ).median()
-        )
+        median_students = pd.to_numeric(
+            df["Total Enrolled Students"],
+            errors="coerce"
+        ).median()
 
         total_students = st.number_input(
             "Total Enrolled Students",
             min_value=1,
             max_value=500,
-            value=default_students,
+            value=int(median_students),
             step=1
         )
 
     with col2:
 
-        default_experience = int(
-            round(
-                pd.to_numeric(
-                    df["Faculty Experience"],
-                    errors="coerce"
-                ).median()
-            )
-        )
+        median_experience = pd.to_numeric(
+            df["Faculty Experience"],
+            errors="coerce"
+        ).median()
 
         faculty_experience = st.number_input(
             "Faculty Experience",
             min_value=0,
             max_value=50,
-            value=default_experience,
+            value=int(round(median_experience)),
             step=1
         )
 
@@ -485,10 +601,12 @@ with st.form("attendance_form"):
 
 
     # ========================================================
-    # ACADEMIC INFORMATION
+    # ACADEMIC DETAILS
     # ========================================================
 
-    st.subheader("4. Academic / Event Information")
+    st.subheader(
+        "4. Academic / Event Information"
+    )
 
     col1, col2, col3 = st.columns(3)
 
@@ -530,6 +648,11 @@ if predict_button:
         prediction_date
     )
 
+
+    # ========================================================
+    # CONVERT TIME
+    # ========================================================
+
     start_minutes = parse_time_to_minutes(
         start_time
     )
@@ -539,14 +662,11 @@ if predict_button:
     )
 
 
-    # --------------------------------------------------------
-    # Validate time
-    # --------------------------------------------------------
-
     if pd.isna(start_minutes):
 
         st.error(
-            "Invalid Start Time. Example: 09.15 AM"
+            "Invalid Start Time. "
+            "Example: 09.15 AM"
         )
 
         st.stop()
@@ -555,7 +675,8 @@ if predict_button:
     if pd.isna(end_minutes):
 
         st.error(
-            "Invalid End Time. Example: 10.15 AM"
+            "Invalid End Time. "
+            "Example: 10.15 AM"
         )
 
         st.stop()
@@ -564,21 +685,23 @@ if predict_button:
     if end_minutes <= start_minutes:
 
         st.error(
-            "End Time must be later than Start Time."
+            "End Time must be later "
+            "than Start Time."
         )
 
         st.stop()
 
 
-    # --------------------------------------------------------
-    # Date validation
-    # --------------------------------------------------------
+    # ========================================================
+    # DAY OF SEMESTER
+    # ========================================================
 
     semester_start = df["Date"].min()
 
     day_of_semester = (
         lecture_date - semester_start
     ).days + 1
+
 
     if day_of_semester < 1:
 
@@ -590,11 +713,13 @@ if predict_button:
         st.stop()
 
 
-    # --------------------------------------------------------
-    # Basic temporal features
-    # --------------------------------------------------------
+    # ========================================================
+    # TEMPORAL FEATURES
+    # ========================================================
 
-    day_of_week = lecture_date.day_name()
+    day_of_week = (
+        lecture_date.day_name()
+    )
 
     lunch_time_slot = (
         "Before Lunch"
@@ -603,9 +728,9 @@ if predict_button:
     )
 
 
-    # --------------------------------------------------------
-    # Historical features
-    # --------------------------------------------------------
+    # ========================================================
+    # HISTORICAL FEATURES
+    # ========================================================
 
     history = get_history(
         section,
@@ -614,9 +739,11 @@ if predict_button:
     )
 
 
-    days_since_holiday = get_days_since_holiday(
-        section,
-        lecture_date
+    days_since_holiday = (
+        get_days_since_holiday(
+            section,
+            lecture_date
+        )
     )
 
 
@@ -629,9 +756,9 @@ if predict_button:
     )
 
 
-    # --------------------------------------------------------
-    # Create prediction dataframe
-    # --------------------------------------------------------
+    # ========================================================
+    # CREATE INPUT DATA
+    # ========================================================
 
     input_data = pd.DataFrame([{
 
@@ -657,7 +784,9 @@ if predict_button:
             int(total_students),
 
         "Previous Lecture Attendence":
-            history["previous_attendance"],
+            history[
+                "previous_attendance"
+            ],
 
         "Gap Since Previous Lecture":
             history["gap"],
@@ -705,20 +834,25 @@ if predict_button:
             lunch_time_slot,
 
         "Week Before Exam":
-            yes_no_to_int(internal_test)
+            yes_no_to_int(
+                internal_test
+            )
 
     }])
 
 
-    # Ensure exact feature order
+    # ========================================================
+    # EXACT FEATURE ORDER
+    # ========================================================
+
     input_data = input_data[
         MODEL_FEATURES
     ]
 
 
-    # --------------------------------------------------------
-    # Prediction
-    # --------------------------------------------------------
+    # ========================================================
+    # PREDICT
+    # ========================================================
 
     try:
 
@@ -736,7 +870,7 @@ if predict_button:
 
 
         # ====================================================
-        # RESULT
+        # DISPLAY RESULT
         # ====================================================
 
         st.success(
@@ -773,6 +907,7 @@ if predict_button:
 
                 status = "Low"
 
+
             st.metric(
                 "Attendance Status",
                 status
@@ -781,11 +916,9 @@ if predict_button:
 
         with col3:
 
-            absence = 100 - prediction
-
             st.metric(
                 "Expected Absence",
-                f"{absence:.2f}%"
+                f"{100 - prediction:.2f}%"
             )
 
 
@@ -802,14 +935,13 @@ if predict_button:
 
             st.success(
                 "The predicted attendance is above "
-                "the commonly used 75% threshold."
+                "the 75% attendance threshold."
             )
 
         elif prediction >= 60:
 
             st.warning(
-                "The predicted attendance is moderate. "
-                "Attendance should be monitored."
+                "The predicted attendance is moderate."
             )
 
         else:
@@ -820,7 +952,7 @@ if predict_button:
 
 
         # ====================================================
-        # SHOW INPUT FEATURES
+        # SHOW FEATURES
         # ====================================================
 
         with st.expander(
@@ -845,12 +977,6 @@ if predict_button:
             )
 
 
-        st.caption(
-            "Historical attendance features are calculated "
-            "using records before the selected lecture date."
-        )
-
-
     except Exception as e:
 
         st.error(
@@ -862,6 +988,6 @@ if predict_button:
         )
 
         st.warning(
-            "Check that the saved model was created using "
-            "the same feature names and preprocessing pipeline."
+            "The model and app.py must use the "
+            "same feature names and preprocessing."
         )
