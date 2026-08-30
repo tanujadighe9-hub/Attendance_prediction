@@ -1,0 +1,519 @@
+﻿Date,Day of Week,Lecture_No,Start_Time,End_Time,Subject,Faculty_ID,Semester,Branch,Section,Classroom,Total Enrolled Students,Students Present,Attendence Percentage,Previous Lecture Attendence,Gap Since Previous Lecture,Practical/ Theory,Internal Test Week,Assignment Due,Holiday Before/ After,Special Event,Weather,Faculty Experience
+2026-06-15,Monday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,46,44.66,-,0.0,Theory,No,No,Yes,No,Rainy,8
+2026-06-15,Monday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,50,49.02,-,0.0,Theory,No,No,Yes,No,Rainy,8
+2026-06-15,Monday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,43,41.75,44.66,0.0,Theory,No,No,Yes,No,Rainy,8
+2026-06-15,Monday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,47,46.08,49.02,0.0,Theory,No,No,Yes,No,Rainy,8
+2026-06-15,Monday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,A,Computer Lab,103,80,77.67,-,0.0,Practical,No,No,Yes,No,Rainy,0
+2026-06-15,Monday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,B,Computer Lab,102,83,81.37,-,0.0,Practical,No,No,Yes,No,Rainy,0
+2026-06-15,Monday,4,01.30 PM,02.30 PM,Guest Session on Generative AI Development,GUEST_EXT,3,MCA,A,Seminar Hall,103,75,72.82,-,1.25,Theory,No,No,Yes,No,Rainy,15
+2026-06-15,Monday,4,01.30 PM,02.30 PM,Guest Session on Generative AI Development,GUEST_EXT,3,MCA,B,Seminar Hall,102,79,77.45,-,1.25,Theory,No,No,Yes,No,Rainy,15
+2026-06-15,Monday,5,02.30 PM,03.30 PM,Guest Session on Generative AI Development,GUEST_EXT,3,MCA,A,Seminar Hall,103,75,72.82,72.82,0.0,Theory,No,No,Yes,No,Rainy,15
+2026-06-15,Monday,5,02.30 PM,03.30 PM,Guest Session on Generative AI Development,GUEST_EXT,3,MCA,B,Seminar Hall,102,79,77.45,77.45,0.0,Theory,No,No,Yes,No,Rainy,15
+2026-06-16,Tuesday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,44,42.72,41.75,0.0,Theory,No,No,No,No,Cloudy,8
+2026-06-16,Tuesday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,49,48.04,46.08,0.0,Theory,No,No,No,No,Cloudy,8
+2026-06-16,Tuesday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,46,44.66,42.72,0.0,Theory,No,No,No,No,Cloudy,8
+2026-06-16,Tuesday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,42,41.18,48.04,0.0,Theory,No,No,No,No,Cloudy,8
+2026-06-16,Tuesday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,A,Computer Lab,103,82,79.61,77.67,0.0,Practical,No,No,No,No,Cloudy,0
+2026-06-16,Tuesday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,B,Computer Lab,102,86,84.31,81.37,0.0,Practical,No,No,No,No,Cloudy,0
+2026-06-16,Tuesday,4,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,A,Computer Lab,103,80,77.67,-,1.25,Practical,No,No,No,No,Cloudy,0
+2026-06-16,Tuesday,4,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,B,Computer Lab,102,82,80.39,-,1.25,Practical,No,No,No,No,Cloudy,0
+2026-06-16,Tuesday,5,02.30 PM,03.30 PM,CI/CD Session,,3,MCA,A,Computer Lab,103,80,77.67,77.67,0.0,Practical,No,No,No,No,Cloudy,0
+2026-06-16,Tuesday,5,02.30 PM,03.30 PM,CI/CD Session,,3,MCA,B,Computer Lab,102,82,80.39,80.39,0.0,Practical,No,No,No,No,Cloudy,0
+2026-06-17,Wednesday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,46,44.66,44.66,0.0,Theory,Yes,No,No,No,Sunny,8
+2026-06-17,Wednesday,1,09.15 AM,10.15 PM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,50,49.02,41.18,0.0,Theory,Yes,No,No,No,Sunny,8
+2026-06-17,Wednesday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,50,48.54,44.66,0.0,Theory,Yes,No,No,No,Sunny,8
+2026-06-17,Wednesday,2,10.15 AM,11.15 PM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,32,31.37,49.02,0.0,Theory,Yes,No,No,No,Sunny,8
+2026-06-17,Wednesday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,A,Computer Lab,103,83,80.58,79.61,0.0,Practical,Yes,No,No,No,Sunny,0
+2026-06-17,Wednesday,3,11.15 AM,12.15 PM,Lab Session,,3,MCA,B,Computer Lab,102,80,78.43,84.31,0.0,Practical,Yes,No,No,No,Sunny,0
+2026-06-17,Wednesday,4,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,A,Computer Lab,103,79,76.7,77.67,1.25,Practical,Yes,No,No,No,Sunny,0
+2026-06-17,Wednesday,4,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,B,Computer Lab,102,77,75.49,80.39,1.25,Practical,Yes,No,No,No,Sunny,0
+2026-06-17,Wednesday,5,02.30 PM,03.30 PM,CI/CD Session,,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Practical,Yes,No,No,No,Sunny,0
+2026-06-17,Wednesday,5,02.30 PM,03.30 PM,CI/CD Session,,3,MCA,B,Computer Lab,102,77,75.49,75.49,0.0,Practical,Yes,No,No,No,Sunny,0
+2026-06-18,Thursday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,31,30.1,48.54,0.0,Theory,Yes,No,No,No,Rainy,8
+2026-06-18,Thursday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,33,32.35,31.37,0.0,Theory,Yes,No,No,No,Rainy,8
+2026-06-18,Thursday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,30,29.13,30.1,0.0,Theory,Yes,No,No,No,Rainy,8
+2026-06-18,Thursday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,32,31.37,32.35,0.0,Theory,Yes,No,No,No,Rainy,8
+2026-06-18,Thursday,3,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,A,Computer Lab,103,85,82.52,76.7,2.25,Practical,Yes,No,No,No,Rainy,0
+2026-06-18,Thursday,3,01.30 PM,02.30 PM,CI/CD Session,,3,MCA,B,Computer Lab,102,90,88.24,75.49,2.25,Practical,Yes,No,No,No,Rainy,0
+2026-06-19,Friday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,29,28.16,29.13,0.0,Theory,Yes,No,No,No,Cloudy,8
+2026-06-19,Friday,1,09.15 AM,10.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,33,32.35,31.37,0.0,Theory,Yes,No,No,No,Cloudy,8
+2026-06-19,Friday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,A,Seminar Hall,103,31,30.1,28.16,0.0,Theory,Yes,No,No,No,Cloudy,8
+2026-06-19,Friday,2,10.15 AM,11.15 AM,Soft Skill,SD,3,MCA,B,Seminar Hall,102,33,32.35,32.35,0.0,Theory,Yes,No,No,No,Cloudy,8
+2026-06-20,Saturday,1,01.00 PM,04.00 PM,Soft Skill Evaluation,SD,3,MCA,A,Seminar Hall,103,29,28.16,-,0.0,Practical,Yes,No,Yes,No,Sunny,8
+2026-06-20,Saturday,1,01.00 PM,04.00 PM,Soft Skill Evaluation,SD,3,MCA,B,Seminar Hall,102,31,30.39,-,0.0,Practical,Yes,No,Yes,No,Sunny,8
+2026-06-22,Monday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,99,96.12,-,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-06-22,Monday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,-,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-06-22,Monday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,99,96.12,96.12,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-06-22,Monday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-06-22,Monday,3,10.15 AM,11.15 AM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,94,91.26,-,0.0,Theory,Yes,No,Yes,No,Cloudy,14
+2026-06-22,Monday,3,10.15 AM,11.15 AM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,90,88.24,-,0.0,Theory,Yes,No,Yes,No,Cloudy,14
+2026-06-22,Monday,4,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,94,91.26,91.26,0.0,Theory,Yes,No,Yes,No,Cloudy,14
+2026-06-22,Monday,4,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,90,88.24,88.24,0.0,Theory,Yes,No,Yes,No,Cloudy,14
+2026-06-22,Monday,5,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,97,94.17,-,1.25,Practical,Yes,No,Yes,No,Cloudy,11
+2026-06-22,Monday,5,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,88,86.27,-,1.25,Practical,Yes,No,Yes,No,Cloudy,11
+2026-06-22,Monday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,97,94.17,94.17,0.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-06-22,Monday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,88,86.27,86.27,0.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-06-23,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,100,97.09,96.12,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-06-23,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,99,97.06,92.16,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-06-23,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-06-23,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,99,97.06,97.06,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-06-23,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,100,97.09,-,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-06-23,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,98,96.08,-,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-06-23,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,100,97.09,-,0.0,Theory,Yes,No,No,No,Sunny,9
+2026-06-23,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,98,96.08,-,0.0,Theory,Yes,No,No,No,Sunny,9
+2026-06-23,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,96,93.2,-,1.25,Practical,Yes,No,No,No,Sunny,10
+2026-06-23,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,94,92.16,-,1.25,Practical,Yes,No,No,No,Sunny,10
+2026-06-23,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,"MKL, SP",3,MCA,A,Computer Lab,103,96,93.2,93.2,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-06-23,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-06-24,Wednesday,1,08.30 AM,9.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-24,Wednesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,101,99.02,97.06,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-24,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-24,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,101,99.02,99.02,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-24,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,A,Computer Lab,103,99,96.12,-,0.0,Theory,No,No,No,No,Rainy,10
+2026-06-24,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,B,Computer Lab,102,97,95.1,-,0.0,Theory,No,No,No,No,Rainy,10
+2026-06-24,Wednesday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,99,96.12,97.09,0.0,Theory,No,No,No,No,Rainy,7
+2026-06-24,Wednesday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,97,95.1,96.08,0.0,Theory,No,No,No,No,Rainy,7
+2026-06-24,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,92,89.32,91.26,1.25,Theory,No,No,No,No,Rainy,14
+2026-06-24,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,85,83.33,88.24,1.25,Theory,No,No,No,No,Rainy,14
+2026-06-24,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,92,89.32,89.32,0.0,Theory,No,No,No,No,Rainy,14
+2026-06-24,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,85,83.33,83.33,0.0,Theory,No,No,No,No,Rainy,14
+2026-06-25,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,102,99.03,97.09,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,100,98.04,99.02,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,102,99.03,99.03,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,100,98.04,98.04,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Theory,No,No,Yes,No,Cloudy,9
+2026-06-25,Thursday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,100,98.04,96.08,0.0,Theory,No,No,Yes,No,Cloudy,9
+2026-06-25,Thursday,4,11.15 AM,12.15PM,Software Testing & Quality Assurance,DPY,3,MCA,A,Computer Lab,103,100,97.09,96.12,0.0,Theory,No,No,Yes,No,Cloudy,10
+2026-06-25,Thursday,4,11.15 AM,12.15 PM,Software Testing & Quality Assurance,DPY,3,MCA,B,Computer Lab,102,100,98.04,95.1,0.0,Theory,No,No,Yes,No,Cloudy,10
+2026-06-25,Thursday,5,01.30 PM,02.30 PM,Industry Readiness Program,VSN,3,MCA,A,Seminar Hall,103,100,97.09,-,1.25,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,5,01.30 PM,02.30 PM,Industry Readiness Program,VSN,3,MCA,B,Seminar Hall,102,99,97.06,-,1.25,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,6,02.30 PM,03.30 PM,Industry Readiness Program,VSN,3,MCA,A,Seminar Hall,103,100,97.09,97.09,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-25,Thursday,6,02.30 PM,03.30 PM,Industry Readiness Program,VSN,3,MCA,B,Seminar Hall,102,99,97.06,97.06,0.0,Theory,No,No,Yes,No,Cloudy,12
+2026-06-27,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,A,Computer Lab,103,82,79.61,-,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-06-27,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,B,Computer Lab,102,85,83.33,-,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-06-27,Saturday,2,09.15 AM,10.15 AM,MAD Practical,OL,3,MCA,A,Computer Lab,103,82,79.61,79.61,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-06-27,Saturday,2,09.15 AM,10.15 AM,MAD Practical,OL,3,MCA,B,Computer Lab,102,85,83.33,83.33,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-06-29,Monday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,96,93.2,99.03,0.0,Theory,No,No,Yes,No,Sunny,12
+2026-06-29,Monday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,98.04,0.0,Theory,No,No,Yes,No,Sunny,12
+2026-06-29,Monday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,96,93.2,93.2,0.0,Theory,No,No,Yes,No,Sunny,12
+2026-06-29,Monday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Theory,No,No,Yes,No,Sunny,12
+2026-06-29,Monday,3,10.15 AM,11.15 AM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,98,95.15,89.32,0.0,Theory,No,No,Yes,No,Sunny,14
+2026-06-29,Monday,3,10.15 AM,11.15 AM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,94,92.16,83.33,0.0,Theory,No,No,Yes,No,Sunny,14
+2026-06-29,Monday,4,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Theory,No,No,Yes,No,Sunny,14
+2026-06-29,Monday,4,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Theory,No,No,Yes,No,Sunny,14
+2026-06-29,Monday,5,01.30 AM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,91,88.35,94.17,1.25,Practical,No,No,Yes,No,Sunny,11
+2026-06-29,Monday,5,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,98,96.08,86.27,1.25,Practical,No,No,Yes,No,Sunny,11
+2026-06-29,Monday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,91,88.35,88.35,0.0,Practical,No,No,Yes,No,Sunny,11
+2026-06-29,Monday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,98,96.08,96.08,0.0,Practical,No,No,Yes,No,Sunny,11
+2026-06-30,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,98,95.15,93.2,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-30,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,90,88.24,92.16,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-30,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-30,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,90,88.24,88.24,0.0,Theory,No,No,No,No,Rainy,12
+2026-06-30,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,98,95.15,96.12,0.0,Theory,No,No,No,No,Rainy,7
+2026-06-30,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,94,92.16,95.1,0.0,Theory,No,No,No,No,Rainy,7
+2026-06-30,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,98,95.15,97.09,0.0,Theory,No,No,No,No,Rainy,9
+2026-06-30,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,"MLK, SP",3,MCA,B,Computer Lab,102,94,92.16,98.04,0.0,Theory,No,No,No,No,Rainy,10
+2026-06-30,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,94,91.26,93.2,1.25,Practical,No,No,No,No,Rainy,10
+2026-06-30,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,89,87.25,92.16,1.25,Practical,No,No,No,No,Rainy,10
+2026-06-30,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,MLK. SP,3,MCA,A,Computer Lab,103,94,91.26,91.26,0.0,Practical,No,No,No,No,Rainy,10
+2026-06-30,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,MLK,3,MCA,B,Computer Lab,102,89,87.25,87.25,0.0,Practical,No,No,No,No,Rainy,9
+2026-07-01,Wednesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-01,Wednesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,88.24,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-01,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-01,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-01,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Theory,No,No,No,No,Cloudy,10
+2026-07-01,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,B,Computer Lab,102,98,96.08,98.04,0.0,Theory,No,No,No,No,Cloudy,10
+2026-07-01,Wednesday,4,11.15 AM,12.15.PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,100,97.09,95.15,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-01,Wednesday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,98,96.08,92.16,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-01,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,89,86.41,95.15,1.25,Theory,No,No,No,No,Cloudy,14
+2026-07-01,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,8,7.84,92.16,1.25,Theory,No,No,No,No,Cloudy,14
+2026-07-01,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,89,86.41,86.41,0.0,Theory,No,No,No,No,Cloudy,14
+2026-07-01,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,87,85.29,7.84,0.0,Theory,No,No,No,No,Cloudy,14
+2026-07-02,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,95,92.23,95.15,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-02,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,96,94.12,92.16,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-02,Thursday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,95,92.23,92.23,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-02,Thursday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,96,94.12,94.12,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-02,Thursday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,92,89.32,95.15,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-02,Thursday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,91,89.22,92.16,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-02,Thursday,4,11.15 AM,12.15 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,92,89.32,97.09,0.0,Theory,No,No,No,No,Sunny,6
+2026-07-02,Thursday,4,11.15 AM,12.15 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,90,88.24,96.08,0.0,Theory,No,No,No,No,Sunny,6
+2026-07-03,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,93,90.29,92.23,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-03,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,95,93.14,94.12,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-03,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,93,90.29,90.29,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-03,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,95,93.14,93.14,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-03,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,91,88.35,89.32,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-03,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,94,92.16,89.22,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-03,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,90,87.38,97.09,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-03,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,94,92.16,96.08,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-03,Friday,5,01.30 AM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,85,82.52,89.32,1.25,Theory,No,No,No,No,Rainy,6
+2026-07-03,Friday,5,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,90,88.24,88.24,1.25,Theory,No,No,No,No,Rainy,6
+2026-07-03,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,85,82.52,82.52,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-03,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,90,88.24,88.24,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-04,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,A,Computer Lab,103,101,98.06,79.61,0.0,Practical,No,No,Yes,No,Cloudy,12
+2026-07-04,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,B,Computer Lab,102,100,98.04,83.33,0.0,Practical,No,No,Yes,No,Cloudy,12
+2026-07-04,Saturday,2,09.15 AM,10.15 AM,Project Meeting,Project Guides,3,MCA,A,Seminar Hall,103,101,98.06,-,0.0,Practical,No,No,Yes,No,Cloudy,11
+2026-07-04,Saturday,2,09.15 AM,10.15 AM,Project Meeting,Project Guides,3,MCA,B,Seminar Hall,102,100,98.04,-,0.0,Practical,No,No,Yes,No,Cloudy,11
+2026-07-06,Monday,1,10.00 AM,11.15 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,79,76.7,86.41,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-06,Monday,1,10.00 AM,11.15 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,81,79.41,85.29,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-06,Monday,2,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,79,76.7,76.7,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-06,Monday,2,11.15 AM,12.15 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,81,79.41,79.41,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-06,Monday,3,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,75,72.82,88.35,1.25,Practical,No,No,Yes,No,Rainy,11
+2026-07-06,Monday,3,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,77,75.49,96.08,1.25,Practical,No,No,Yes,No,Rainy,11
+2026-07-06,Monday,4,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,75,72.82,72.82,0.0,Practical,No,No,Yes,No,Rainy,11
+2026-07-06,Monday,4,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,77,75.49,75.49,0.0,Practical,No,No,Yes,No,Rainy,11
+2026-07-07,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,74,71.84,90.29,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-07,Tuesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,70,68.63,93.14,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-07,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,74,71.84,71.84,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-07,Tuesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-07,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,89,86.41,87.38,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-07,Tuesday,3,10.15 AM,11.15 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,88,86.27,92.16,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-07,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,89,86.41,88.35,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-07,Tuesday,4,11.15 AM,12.15 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,89,87.25,92.16,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-07,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,84,81.55,91.26,1.25,Practical,No,No,No,No,Cloudy,10
+2026-07-07,Tuesday,5,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,80,78.43,87.25,1.25,Practical,No,No,No,No,Cloudy,10
+2026-07-07,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,84,81.55,81.55,0.0,Practical,No,No,No,No,Cloudy,10
+2026-07-07,Tuesday,6,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,80,78.43,78.43,0.0,Practical,No,No,No,No,Cloudy,10
+2026-07-08,Wednesday,1,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,82,79.61,71.84,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-07-08,Wednesday,1,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,80,78.43,68.63,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-07-08,Wednesday,2,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,A,Computer Lab,103,83,80.58,82.52,0.0,Theory,Yes,No,No,No,Sunny,10
+2026-07-08,Wednesday,2,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,B,Computer Lab,102,82,80.39,88.24,0.0,Theory,Yes,No,No,No,Sunny,10
+2026-07-08,Wednesday,3,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,85,82.52,86.41,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-07-08,Wednesday,3,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,83,81.37,86.27,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-07-08,Wednesday,4,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,78,75.73,76.7,1.25,Theory,Yes,No,No,No,Sunny,14
+2026-07-08,Wednesday,4,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,79,77.45,79.41,1.25,Theory,Yes,No,No,No,Sunny,14
+2026-07-08,Wednesday,5,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,78,75.73,75.73,0.0,Theory,Yes,No,No,No,Sunny,14
+2026-07-08,Wednesday,5,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,79,77.45,77.45,0.0,Theory,Yes,No,No,No,Sunny,14
+2026-07-09,Thursday,1,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,85,82.52,79.61,0.0,Theory,Yes,No,No,No,Rainy,12
+2026-07-09,Thursday,1,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,89,87.25,78.43,0.0,Theory,Yes,No,No,No,Rainy,12
+2026-07-09,Thursday,2,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,85,82.52,86.41,0.0,Theory,Yes,No,No,No,Rainy,9
+2026-07-09,Thursday,2,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,89,87.25,87.25,0.0,Theory,Yes,No,No,No,Rainy,9
+2026-07-09,Thursday,3,11.15 AM,12.15 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,85,82.52,80.58,0.0,Theory,Yes,No,No,No,Rainy,6
+2026-07-09,Thursday,3,11.15 AM,12.15P PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,89,87.25,80.39,0.0,Theory,Yes,No,No,No,Rainy,6
+2026-07-10,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,77,74.76,82.52,0.0,Theory,Yes,No,No,No,Cloudy,12
+2026-07-10,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,74,72.55,87.25,0.0,Theory,Yes,No,No,No,Cloudy,12
+2026-07-10,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,77,74.76,74.76,0.0,Theory,Yes,No,No,No,Cloudy,12
+2026-07-10,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,74,72.55,72.55,0.0,Theory,Yes,No,No,No,Cloudy,12
+2026-07-10,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,79,76.7,82.52,0.0,Theory,Yes,No,No,No,Cloudy,9
+2026-07-10,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,78,76.47,87.25,0.0,Theory,Yes,No,No,No,Cloudy,9
+2026-07-10,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,83,80.58,82.52,0.0,Theory,Yes,No,No,No,Cloudy,7
+2026-07-10,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,83,81.37,81.37,0.0,Theory,Yes,No,No,No,Cloudy,7
+2026-07-10,Friday,5,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,80,77.67,82.52,1.25,Theory,Yes,No,No,No,Cloudy,6
+2026-07-10,Friday,5,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,82,80.39,87.25,1.25,Theory,Yes,No,No,No,Cloudy,6
+2026-07-10,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,80,77.67,77.67,0.0,Theory,Yes,No,No,No,Cloudy,6
+2026-07-10,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,82,80.39,80.39,0.0,Theory,Yes,No,No,No,Cloudy,6
+2026-07-11,Saturday,1,10.00 AM,01.00 PM,HR Mock Interview,GUEST_EXT,3,MCA,A,Seminar Hall,103,103,100.0,-,0.0,Practical,Yes,No,Yes,No,Sunny,15
+2026-07-11,Saturday,1,10.00 AM,01.00 PM,HR Mock Interview,GUEST_EXT,3,MCA,B,Seminar Hall,102,102,100.0,-,0.0,Practical,Yes,No,Yes,No,Sunny,15
+2026-07-11,Saturday,2,01.30 PM,04.30 PM,HR Mock Interview,GUEST_EXT,3,MCA,A,Seminar Hall,103,103,100.0,100.0,0.5,Practical,Yes,No,Yes,No,Sunny,15
+2026-07-11,Saturday,2,01.30 PM,04.30 PM,HR Mock Interview,GUEST_EXT,3,MCA,B,Seminar Hall,102,102,100.0,100.0,0.5,Practical,Yes,No,Yes,No,Sunny,15
+2026-07-13,Monday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,70,67.96,74.76,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-07-13,Monday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,72,70.59,72.55,0.0,Theory,Yes,No,Yes,No,Cloudy,12
+2026-07-13,Monday,2,09.30 AM,10.30 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,72,69.9,75.73,0.0,Theory,Yes,No,Yes,No,Cloudy,5
+2026-07-13,Monday,2,09.30 AM,10.30 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,73,71.57,77.45,0.0,Theory,Yes,No,Yes,No,Cloudy,5
+2026-07-13,Monday,3,10.30 AM,11.30 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,72,69.9,69.9,0.0,Theory,Yes,No,Yes,No,Cloudy,5
+2026-07-13,Monday,3,10.30 AM,11.30 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,73,71.57,71.57,0.0,Theory,Yes,No,Yes,No,Cloudy,5
+2026-07-13,Monday,4,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,69,66.99,72.82,2.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-07-13,Monday,4,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,65,63.73,75.49,2.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-07-13,Monday,5,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,69,66.99,66.99,0.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-07-13,Monday,5,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,65,63.73,63.73,0.0,Practical,Yes,No,Yes,No,Cloudy,11
+2026-07-14,Tuesday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,75,72.82,67.96,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-07-14,Tuesday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,78,76.47,70.59,0.0,Theory,Yes,No,No,No,Sunny,12
+2026-07-14,Tuesday,2,09.30 AM,10.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,80,77.67,80.58,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-07-14,Tuesday,2,09.30 AM,10.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,83,81.37,81.37,0.0,Theory,Yes,No,No,No,Sunny,7
+2026-07-14,Tuesday,3,10.30 AM,11.30 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,80,77.67,76.7,0.0,Theory,Yes,No,No,No,Sunny,9
+2026-07-14,Tuesday,3,10.30 AM,11.30 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,85,83.33,76.47,0.0,Theory,Yes,No,No,No,Sunny,9
+2026-07-14,Tuesday,4,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,77,74.76,81.55,2.0,Practical,Yes,No,No,No,Sunny,10
+2026-07-14,Tuesday,4,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,80,78.43,78.43,2.0,Practical,Yes,No,No,No,Sunny,10
+2026-07-14,Tuesday,5,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,77,74.76,74.76,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-07-14,Tuesday,5,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,80,78.43,78.43,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-07-15,Wednesday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,73,70.87,72.82,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-15,Wednesday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,72,70.59,76.47,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-15,Wednesday,2,09.30 AM,10.30 AM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,79,76.7,77.67,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-15,Wednesday,2,09.30 AM,10.30 AM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,78,76.47,80.39,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-15,Wednesday,3,10.30 AM,11.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,82,79.61,77.67,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-15,Wednesday,3,10.30 AM,11.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,79,77.45,81.37,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-15,Wednesday,4,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,80,77.67,69.9,2.0,Theory,No,No,No,No,Rainy,14
+2026-07-15,Wednesday,4,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,77,75.49,71.57,2.0,Theory,No,No,No,No,Rainy,14
+2026-07-15,Wednesday,5,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,A,Computer Lab,103,80,77.67,77.67,0.0,Theory,No,No,No,No,Rainy,14
+2026-07-15,Wednesday,5,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,JSP,3,MCA,B,Computer Lab,102,77,75.49,75.49,0.0,Theory,No,No,No,No,Rainy,14
+2026-07-16,Thursday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,74,71.84,70.87,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-16,Thursday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,77,75.49,70.59,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-16,Thursday,2,09.30 AM,10.30 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,79,76.7,77.67,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-16,Thursday,2,09.30 AM,10.30 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,77,75.49,83.33,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-16,Thursday,3,10.30 AM,11.30 AM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,83,80.58,76.7,0.0,Theory,No,No,No,No,Cloudy,6
+2026-07-16,Thursday,3,10.30 AM,11.30 AM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,79,77.45,76.47,0.0,Theory,No,No,No,No,Cloudy,6
+2026-07-17,Friday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,75,72.82,71.84,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-17,Friday,1,08.30 AM,09.30 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,72,70.59,75.49,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-17,Friday,2,09.30 AM,10.30 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-17,Friday,2,09.30 AM,10.30 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,75,73.53,75.49,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-17,Friday,3,10.30 AM,11.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,78,75.73,79.61,0.0,Theory,No,No,No,No,Sunny,7
+2026-07-17,Friday,3,10.30 AM,11.30 AM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,76,74.51,77.45,0.0,Theory,No,No,No,No,Sunny,7
+2026-07-17,Friday,4,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,71,68.93,80.58,2.0,Theory,No,No,No,No,Sunny,6
+2026-07-17,Friday,4,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,73,71.57,77.45,2.0,Theory,No,No,No,No,Sunny,6
+2026-07-17,Friday,5,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,71,68.93,68.93,0.0,Theory,No,No,No,No,Sunny,6
+2026-07-17,Friday,5,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,73,71.57,71.57,0.0,Theory,No,No,No,No,Sunny,6
+2026-07-18,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,A,Computer Lab,103,68,66.02,98.06,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-07-18,Saturday,1,08.30 AM,09.15 AM,MAD Practical,OL,3,MCA,B,Computer Lab,102,67,65.69,98.04,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-07-18,Saturday,2,09.15 AM,10.15 AM,MAD Practical,OL,3,MCA,A,Computer Lab,103,68,66.02,66.02,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-07-18,Saturday,2,09.15 AM,10.15 AM,MAD Practical,OL,3,MCA,B,Computer Lab,102,67,65.69,65.69,0.0,Practical,No,No,Yes,No,Rainy,12
+2026-07-20,Monday,1,09.00 AM,10.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,70,67.96,77.67,0.0,Theory,No,No,Yes,Yes,Sunny,5
+2026-07-20,Monday,1,09.00 AM,10. 00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,67,65.69,75.49,0.0,Theory,No,No,Yes,Yes,Sunny,5
+2026-07-20,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,70,67.96,67.96,0.0,Theory,No,No,Yes,Yes,Sunny,5
+2026-07-20,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,67,65.69,65.69,0.0,Theory,No,No,Yes,Yes,Sunny,5
+2026-07-20,Monday,3,02.00 PM,03.00 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,68,66.02,66.99,3.0,Practical,No,No,Yes,Yes,Sunny,11
+2026-07-20,Monday,3,02.00 PM,03.00 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,65,63.73,63.73,3.0,Practical,No,No,Yes,Yes,Sunny,11
+2026-07-20,Monday,4,03.00 PM,04.00 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,68,66.02,66.02,0.0,Practical,No,No,Yes,Yes,Sunny,11
+2026-07-20,Monday,4,03.00 PM,04.00 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,65,63.73,63.73,0.0,Practical,No,No,Yes,Yes,Sunny,11
+2026-07-22,Wednesday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,67,65.05,72.82,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-22,Wednesday,1,08.30 AM,0915 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,66,64.71,70.59,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-22,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,67,65.05,65.05,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-22,Wednesday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,66,64.71,64.71,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-22,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,A,Computer Lab,103,75,72.82,68.93,0.0,Theory,No,No,No,No,Cloudy,10
+2026-07-22,Wednesday,3,10.15 AM,11.15 AM,Software Testing & Quality Assurance,DPY,3,MCA,B,Computer Lab,102,67,65.69,71.57,0.0,Theory,No,No,No,No,Cloudy,10
+2026-07-22,Wednesday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,77,74.76,75.73,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-22,Wednesday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,68,66.67,74.51,0.0,Theory,No,No,No,No,Cloudy,7
+2026-07-22,Wednesday,5,01.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Computer Lab,103,64,62.14,67.96,1.25,Theory,No,No,No,No,Cloudy,5
+2026-07-22,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Computer Lab,102,62,60.78,65.69,1.25,Theory,No,No,No,No,Cloudy,5
+2026-07-22,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Computer Lab,103,64,62.14,62.14,0.0,Theory,No,No,No,No,Cloudy,5
+2026-07-22,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Computer Lab,102,62,60.78,60.78,0.0,Theory,No,No,No,No,Cloudy,5
+2026-07-23,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,70,67.96,65.05,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-23,Thursday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,68,66.67,64.71,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-23,Thursday,2,09.15 AM,10.00 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,70,67.96,67.96,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-23,Thursday,2,09.15 AM,10.00 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,68,66.67,66.67,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-23,Thursday,3,10.00 AM,11.00 AM,Talenlio Guest Session,GUEST_EXT,3,MCA,A,Seminar Hall,103,89,86.41,-,0.0,Practical,No,No,No,No,Sunny,15
+2026-07-23,Thursday,3,10.00 AM,11.00 AM,Talenlio Guest Session,GUEST_EXT,3,MCA,B,Seminar Hall,102,87,85.29,-,0.0,Practical,No,No,No,No,Sunny,15
+2026-07-23,Thursday,4,11.00 AM,12.00 PM,Talenlio Guest Session,GUEST_EXT,3,MCA,A,Seminar Hall,103,89,86.41,86.41,0.0,Practical,No,No,No,No,Sunny,15
+2026-07-23,Thursday,4,11.00 AM,12.00 PM,Talenlio Guest Session,GUEST_EXT,3,MCA,B,Seminar Hall,102,87,85.29,85.29,0.0,Practical,No,No,No,No,Sunny,15
+2026-07-23,Thursday,5,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,65,63.11,66.02,1.5,Practical,No,No,No,No,Sunny,11
+2026-07-23,Thursday,5,01.30 PM,02.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,63,61.76,63.73,1.5,Practical,No,No,No,No,Sunny,11
+2026-07-23,Thursday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,A,Computer Lab,103,65,63.11,63.11,0.0,Practical,No,No,No,No,Sunny,11
+2026-07-23,Thursday,6,02.30 PM,03.30 PM,STQA Practical,"DPY, AAB",3,MCA,B,Computer Lab,102,63,61.76,61.76,0.0,Practical,No,No,No,No,Sunny,11
+2026-07-24,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,68,66.02,67.96,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-24,Friday,1,08.30 AM,09.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,64,62.75,66.67,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-24,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,68,66.02,66.02,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-24,Friday,2,09.15 AM,10.15 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,64,62.75,62.75,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-24,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,72,69.9,76.7,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-24,Friday,3,10.15 AM,11.15 AM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,71,69.61,73.53,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-24,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,A,Computer Lab,103,75,72.82,74.76,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-24,Friday,4,11.15 AM,12.15 PM,Principles of Cloud Management & Security,SDM,3,MCA,B,Computer Lab,102,75,73.53,66.67,0.0,Theory,No,No,No,No,Rainy,7
+2026-07-24,Friday,5,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,70,67.96,72.82,1.25,Theory,No,No,No,No,Rainy,6
+2026-07-24,Friday,5,01.30 PM,02.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,66,64.71,65.69,1.25,Theory,No,No,No,No,Rainy,6
+2026-07-24,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,A,Computer Lab,103,70,67.96,67.96,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-24,Friday,6,02.30 PM,03.30 PM,Software Testing & Quality Assurance,AAB,3,MCA,B,Computer Lab,102,66,64.71,64.71,0.0,Theory,No,No,No,No,Rainy,6
+2026-07-27,Monday,1,09.00 AM,10.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,67,65.05,62.14,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-27,Monday,1,09.00 AM,10.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,69,67.65,60.78,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-27,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,67,65.05,65.05,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-27,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,69,67.65,67.65,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-07-27,Monday,3,11.00 AM,12.15 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,69,66.99,69.9,0.0,Theory,No,No,Yes,No,Rainy,4
+2026-07-27,Monday,3,11.00 AM,12.15 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,72,70.59,69.61,0.0,Theory,No,No,Yes,No,Rainy,4
+2026-07-27,Monday,4,01.30 PM,02.30 PM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,92,89.32,-,1.25,Practical,No,No,Yes,No,Rainy,6
+2026-07-27,Monday,4,01.30 PM,02.30 PM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,95,93.14,-,1.25,Practical,No,No,Yes,No,Rainy,6
+2026-07-27,Monday,5,02.30 PM,03.30 PM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,92,89.32,89.32,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-07-27,Monday,5,02.30 PM,03.30 PM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,95,93.14,93.14,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-07-27,Monday,6,03.30 PM,04.30 PM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,92,89.32,89.32,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-07-27,Monday,6,03.30 PM,04.30 PM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,95,93.14,93.14,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-07-28,Tuesday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,71,68.93,66.02,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-28,Tuesday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,70,68.63,62.75,0.0,Theory,No,No,No,No,Cloudy,12
+2026-07-28,Tuesday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,98,95.15,89.32,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-28,Tuesday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,96,94.12,93.14,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-28,Tuesday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-28,Tuesday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,96,94.12,94.12,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-28,Tuesday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,90,87.38,66.99,0.0,Theory,No,No,No,No,Cloudy,4
+2026-07-28,Tuesday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,92,90.2,70.59,0.0,Theory,No,No,No,No,Cloudy,4
+2026-07-28,Tuesday,5,01.30 PM,02.30 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,84,81.55,87.38,1.0,Theory,No,No,No,No,Cloudy,4
+2026-07-28,Tuesday,5,01.30 PM,02.30 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,80,78.43,90.2,1.0,Theory,No,No,No,No,Cloudy,4
+2026-07-28,Tuesday,6,02.30 PM,03.30 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,84,81.55,81.55,0.0,Theory,No,No,No,No,Cloudy,4
+2026-07-28,Tuesday,6,02.30 PM,03.30 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,80,78.43,78.43,0.0,Theory,No,No,No,No,Cloudy,4
+2026-07-29,Wednesday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,73,70.87,68.93,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-29,Wednesday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,75,73.53,68.63,0.0,Theory,No,No,No,No,Sunny,12
+2026-07-29,Wednesday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,100,97.09,95.15,0.0,Practical,No,No,No,No,Sunny,6
+2026-07-29,Wednesday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,101,99.02,94.12,0.0,Practical,No,No,No,No,Sunny,6
+2026-07-29,Wednesday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Practical,No,No,No,No,Sunny,6
+2026-07-29,Wednesday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,101,99.02,99.02,0.0,Practical,No,No,No,No,Sunny,6
+2026-07-29,Wednesday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,97,94.17,81.55,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-29,Wednesday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,99,97.06,78.43,0.0,Theory,No,No,No,No,Sunny,9
+2026-07-29,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,83,80.58,65.05,1.0,Theory,No,No,No,No,Sunny,5
+2026-07-29,Wednesday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,85,83.33,67.65,1.0,Theory,No,No,No,No,Sunny,5
+2026-07-29,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,83,80.58,80.58,0.0,Theory,No,No,No,No,Sunny,5
+2026-07-29,Wednesday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,85,83.33,83.33,0.0,Theory,No,No,No,No,Sunny,5
+2026-07-29,Wednesday,7,03.30 PM,04.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,83,80.58,80.58,0.0,Theory,No,No,No,No,Sunny,5
+2026-07-29,Wednesday,7,03.30 PM,04.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,85,83.33,83.33,0.0,Theory,No,No,No,No,Sunny,5
+2026-07-30,Thursday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,A,Computer Lab,103,74,71.84,70.87,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-30,Thursday,1,08.00 AM,09.00 AM,Mobile Application Development,OL,3,MCA,B,Computer Lab,102,70,68.63,73.53,0.0,Theory,No,No,No,No,Rainy,12
+2026-07-30,Thursday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,98,95.15,97.09,0.0,Practical,No,No,No,No,Rainy,6
+2026-07-30,Thursday,2,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,96,94.12,99.02,0.0,Practical,No,No,No,No,Rainy,6
+2026-07-30,Thursday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Practical,No,No,No,No,Rainy,6
+2026-07-30,Thursday,3,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,96,94.12,94.12,0.0,Practical,No,No,No,No,Rainy,6
+2026-07-30,Thursday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,92,89.32,94.17,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-30,Thursday,4,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,94,92.16,97.06,0.0,Theory,No,No,No,No,Rainy,9
+2026-07-30,Thursday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,82,79.61,80.58,1.0,Theory,No,No,No,No,Rainy,5
+2026-07-30,Thursday,5,01.30 PM,02.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,80,78.43,83.33,1.0,Theory,No,No,No,No,Rainy,5
+2026-07-30,Thursday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,82,79.61,79.61,0.0,Theory,No,No,No,No,Rainy,5
+2026-07-30,Thursday,6,02.30 PM,03.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,80,78.43,78.43,0.0,Theory,No,No,No,No,Rainy,5
+2026-07-30,Thursday,7,03.30 PM,04.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,82,79.61,79.61,0.0,Theory,No,No,No,No,Rainy,5
+2026-07-30,Thursday,7,03.30 PM,04.30 PM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Seminar Hall,102,80,78.43,78.43,0.0,Theory,No,No,No,No,Rainy,5
+2026-07-31,Friday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,100,97.09,95.15,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-31,Friday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,98,96.08,94.12,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-31,Friday,2,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,100,97.09,97.09,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-31,Friday,2,10.00 AM,11.30 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,98,96.08,96.08,0.0,Practical,No,No,No,No,Cloudy,6
+2026-07-31,Friday,3,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,98,95.15,89.32,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-31,Friday,3,11.30 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Theory,No,No,No,No,Cloudy,9
+2026-07-31,Friday,4,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,72,69.9,74.76,1.0,Practical,No,No,No,No,Cloudy,10
+2026-07-31,Friday,4,01.30 PM,02.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,68,66.67,78.43,1.0,Practical,No,No,No,No,Cloudy,10
+2026-07-31,Friday,5,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,A,Computer Lab,103,72,69.9,69.9,0.0,Practical,No,No,No,No,Cloudy,10
+2026-07-31,Friday,5,02.30 PM,03.30 PM,DS & ML Practical,"MLK, SP",3,MCA,B,Computer Lab,102,68,66.67,66.67,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-01,Saturday,1,10.00 AM,11.30 AM,Project Meeting,Project Guides,3,MCA,A,Computer Lab,103,16,15.53,98.06,0.0,Practical,No,No,Yes,No,Cloudy,14
+2026-08-01,Saturday,1,10.00 AM,11.30 AM,Project Meeting,Project Guides,3,MCA,B,Computer Lab,102,10,9.8,98.04,0.0,Practical,No,No,Yes,No,Cloudy,14
+2026-08-01,Saturday,2,11.30 AM,12.30 AM,Project Meeting,Project Guides,3,MCA,A,Computer Lab,103,16,15.53,15.53,0.0,Practical,No,No,Yes,No,Cloudy,14
+2026-08-01,Saturday,2,11.30 AM,12.30 PM,Project Meeting,Project Guides,3,MCA,B,Computer Lab,102,10,9.8,9.8,0.0,Practical,No,No,Yes,No,Cloudy,14
+2026-08-01,Saturday,3,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,99,96.12,-,1.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-01,Saturday,3,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,98,96.08,-,1.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-01,Saturday,4,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,99,96.12,96.12,0.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-01,Saturday,4,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,98,96.08,96.08,0.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-01,Saturday,5,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,99,96.12,96.12,0.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-01,Saturday,5,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,98,96.08,96.08,0.0,Practical,No,No,Yes,No,Cloudy,10
+2026-08-03,Monday,1,09.00 AM,10.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,81,78.64,79.61,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-08-03,Monday,1,09.00AM,10.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Computer Lab,102,83,81.37,78.43,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-08-03,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,A,Seminar Hall,103,81,78.64,78.64,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-08-03,Monday,2,10.00 AM,11.00 AM,Innovation & Entrepreneurship Development,SA,3,MCA,B,Computer Lab,102,83,81.37,81.37,0.0,Theory,No,No,Yes,No,Rainy,5
+2026-08-03,Monday,3,11.00 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,A,Computer Lab,103,82,79.61,95.15,0.0,Theory,No,No,Yes,No,Rainy,9
+2026-08-03,Monday,3,11.00 AM,12.30 PM,Data Science & Machine Learning,MLK,3,MCA,B,Computer Lab,102,82,80.39,92.16,0.0,Theory,No,No,Yes,No,Rainy,9
+2026-08-03,Monday,4,01.30 PM,02.30 PM,AWS Training,KP,3,MCA,A,Computer Lab,103,98,95.15,96.12,1.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-03,Monday,4,01.30 PM,02.30 PM,AWS Training,KP,3,MCA,B,Computer Lab,102,95,93.14,96.08,1.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-03,Monday,5,02.30 PM,03.30 PM,AWS Training,KP,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-03,Monday,5,02.30 PM,03.30 PM,AWS Training,KP,3,MCA,B,Computer Lab,102,95,93.14,93.14,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-03,Monday,6,03.30 PM,04.30 PM,AWS Training,KP,3,MCA,A,Computer Lab,103,98,95.15,95.15,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-03,Monday,6,03.30 PM,04.30 PM,AWS Training,KP,3,MCA,B,Computer Lab,102,95,93.14,93.14,0.0,Practical,No,No,Yes,No,Rainy,6
+2026-08-04,Tuesday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,97,94.17,97.09,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,96.08,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,2,10.00 AM,11.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,97,94.17,94.17,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,2,10.00 AM,11.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,3,11.00 AM,12.30 PM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,97,94.17,94.17,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,3,11.00 AM,12.30 PM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,No,No,No,No,Cloudy,6
+2026-08-04,Tuesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,92,89.32,95.15,1.0,Practical,No,No,No,No,Cloudy,10
+2026-08-04,Tuesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,96,94.12,93.14,1.0,Practical,No,No,No,No,Cloudy,10
+2026-08-04,Tuesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,92,89.32,89.32,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-04,Tuesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,96,94.12,94.12,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-04,Tuesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,92,89.32,89.32,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-04,Tuesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,96,94.12,94.12,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-05,Wednesday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,93,90.29,94.17,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,1,09.00 AM,10.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,2,10.00 AM,11.00 AM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,93,90.29,90.29,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,2,10.00 AM,11.00 AM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,3,11.00 AM,12.30 PM,Selenium Hands-on,KP,3,MCA,A,Computer Lab,103,93,90.29,90.29,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,3,11.00 AM,12.30 PM,Selenium Hands-on,KP,3,MCA,B,Computer Lab,102,94,92.16,92.16,0.0,Practical,Yes,No,No,No,Sunny,6
+2026-08-05,Wednesday,4,01.30 PM,02.30 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,73,70.87,79.61,1.0,Theory,Yes,No,No,No,Sunny,4
+2026-08-05,Wednesday,4,01.30 PM,02.30 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,75,73.53,80.39,1.0,Theory,Yes,No,No,No,Sunny,4
+2026-08-05,Wednesday,5,02.30 PM,03.30 PM,Data Science & Machine Learning,SP,3,MCA,A,Computer Lab,103,73,70.87,70.87,0.0,Theory,Yes,No,No,No,Sunny,4
+2026-08-05,Wednesday,5,02.30 PM,03.30 PM,Data Science & Machine Learning,SP,3,MCA,B,Computer Lab,102,75,73.53,73.53,0.0,Theory,Yes,No,No,No,Sunny,4
+2026-08-06,Thursday,1,09.15 AM,10.15 AM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,88,85.44,-,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,1,09.15 AM,10.15 AM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,84,82.35,-,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,2,10.15 AM,11.15 AM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,88,85.44,85.44,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,2,10.15 AM,11.15 AM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,84,82.35,82.35,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,3,11.15 AM,12.15 AM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,88,85.44,85.44,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,3,11.15 AM,12.15 PM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,84,82.35,82.35,0.0,Practical,Yes,No,No,No,Rainy,8
+2026-08-06,Thursday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,90,87.38,89.32,1.25,Practical,Yes,No,No,No,Rainy,10
+2026-08-06,Thursday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,86,84.31,94.12,1.25,Practical,Yes,No,No,No,Rainy,10
+2026-08-06,Thursday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,90,87.38,87.38,0.0,Practical,Yes,No,No,No,Rainy,10
+2026-08-06,Thursday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,86,84.31,84.31,0.0,Practical,Yes,No,No,No,Rainy,10
+2026-08-06,Thursday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,90,87.38,87.38,0.0,Practical,Yes,No,No,No,Rainy,10
+2026-08-06,Thursday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,86,84.31,84.31,0.0,Practical,Yes,No,No,No,Rainy,10
+2026-08-07,Friday,1,09.15 AM,10.15 AM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,79,76.7,85.44,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,1,09.15 AM,10.15 AM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,75,73.53,82.35,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,2,10.15 AM,11.15 AM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,2,10.15 AM,11.15 AM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,75,73.53,73.53,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,3,11.15 AM,12.15PM,MAD Hands-on,SSP,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,3,11.15 AM,12.15 PM,MAD Hands-on,SSP,3,MCA,B,Computer Lab,102,75,73.53,73.53,0.0,Practical,Yes,No,No,No,Cloudy,8
+2026-08-07,Friday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,86,83.5,87.38,1.25,Practical,Yes,No,No,No,Cloudy,10
+2026-08-07,Friday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,83,81.37,84.31,1.25,Practical,Yes,No,No,No,Cloudy,10
+2026-08-07,Friday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,86,83.5,83.5,0.0,Practical,Yes,No,No,No,Cloudy,10
+2026-08-07,Friday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,83,81.37,81.37,0.0,Practical,Yes,No,No,No,Cloudy,10
+2026-08-07,Friday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,86,83.5,83.5,0.0,Practical,Yes,No,No,No,Cloudy,10
+2026-08-07,Friday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,83,81.37,81.37,0.0,Practical,Yes,No,No,No,Cloudy,10
+2026-08-08,Saturday,1,10.00 AM,01.00 PM,Technical Mock Interview,GUEST_EXT,3,MCA,A,Seminar Hall,103,103,100.0,-,0.0,Practical,Yes,No,Yes,Yes,Sunny,15
+2026-08-08,Saturday,1,10.00 AM,01.00 PM,Technical Mock Interview,GUEST_EXT,3,MCA,B,Seminar Hall,102,102,100.0,-,0.0,Practical,Yes,No,Yes,Yes,Sunny,15
+2026-08-08,Saturday,2,01.30 PM,04.30 PM,Technical Mock Interview,GUEST_EXT,3,MCA,A,Seminar Hall,103,103,100.0,100.0,0.5,Practical,Yes,No,Yes,Yes,Sunny,15
+2026-08-08,Saturday,2,01.30 PM,04.30 PM,Technical Mock Interview,GUEST_EXT,3,MCA,B,Seminar Hall,102,102,100.0,100.0,0.5,Practical,Yes,No,Yes,Yes,Sunny,15
+2026-08-10,Monday,1,09.15 AM,10.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,75,72.82,-,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,1,09.15 AM,10.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,71,69.61,-,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,2,10.15 AM,11.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,75,72.82,72.82,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,2,10.15 AM,11.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,71,69.61,69.61,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,3,11.15 AM,12.15 PM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,75,72.82,72.82,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,3,11.15 AM,12.15 PM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,71,69.61,69.61,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,83,80.58,83.5,1.25,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,80,78.43,81.37,1.25,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,83,80.58,80.58,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,80,78.43,78.43,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,83,80.58,80.58,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-10,Monday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,80,78.43,78.43,0.0,Practical,Yes,No,Yes,No,Cloudy,10
+2026-08-11,Tuesday,1,09.15 AM,10.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,73,70.87,72.82,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,1,09.15 AM,10.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,70,68.63,69.61,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,2,10.15 AM,11.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,73,70.87,70.87,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,2,10.15 AM,11.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,3,11.15 AM,12.15 PM,DS & ML Hands-on,"MLK, SP",3,MCA,A,Computer Lab,103,73,70.87,70.87,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,3,11.15 AM,11.15 AM,DS & ML Hands-on,"MLK, SP",3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,81,78.64,80.58,1.25,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,78,76.47,78.43,1.25,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,81,78.64,78.64,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,78,76.47,76.47,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,81,78.64,78.64,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-11,Tuesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,78,76.47,76.47,0.0,Practical,Yes,No,No,No,Sunny,10
+2026-08-12,Wednesday,1,09.15 AM,10.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,64,62.14,-,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,1,09.15 AM,10.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,70,68.63,-,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,2,10.15 AM,11.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,64,62.14,62.14,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,2,10.15 AM,11.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,3,11.15 AM,12.15 PM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,64,62.14,62.14,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,3,11.15 AM,12.15 PM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,No,No,No,No,Rainy,11
+2026-08-12,Wednesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,79,76.7,78.64,1.25,Practical,No,No,No,No,Rainy,10
+2026-08-12,Wednesday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,82,80.39,76.47,1.25,Practical,No,No,No,No,Rainy,10
+2026-08-12,Wednesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-12,Wednesday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,82,80.39,80.39,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-12,Wednesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,79,76.7,76.7,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-12,Wednesday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,82,80.39,80.39,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-13,Thursday,1,09.15 AM,10.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,66,64.08,62.14,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,1,09.15 AM,10.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,63,61.76,68.63,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,2,10.15 AM,11.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,66,64.08,64.08,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,2,10.15 AM,11.15 AM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,63,61.76,61.76,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,3,11.15 AM,12.15 PM,STQA Hands-on,"DPY, AAB",3,MCA,A,Computer Lab,103,66,64.08,64.08,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,3,11.15 AM,12.15 PM,STQA Hands-on,"DPY, AAB",3,MCA,B,Computer Lab,102,63,61.76,61.76,0.0,Practical,No,No,No,No,Cloudy,11
+2026-08-13,Thursday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,78,75.73,76.7,1.25,Practical,No,No,No,No,Cloudy,10
+2026-08-13,Thursday,4,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,75,73.53,80.39,1.25,Practical,No,No,No,No,Cloudy,10
+2026-08-13,Thursday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,78,75.73,75.73,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-13,Thursday,5,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,75,73.53,73.53,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-13,Thursday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,78,75.73,75.73,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-13,Thursday,6,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,75,73.53,73.53,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-14,Friday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,73,70.87,75.73,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-14,Friday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,70,68.63,73.53,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-14,Friday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,73,70.87,70.87,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-14,Friday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-14,Friday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,73,70.87,70.87,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-14,Friday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,70,68.63,68.63,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,62,60.19,70.87,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,59,57.84,68.63,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,62,60.19,60.19,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,59,57.84,57.84,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,62,60.19,60.19,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-17,Monday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,59,57.84,57.84,0.0,Practical,No,No,Yes,No,Sunny,10
+2026-08-18,Tuesday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,68,66.02,60.19,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-18,Tuesday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,64,62.75,57.84,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-18,Tuesday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,68,66.02,66.02,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-18,Tuesday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,64,62.75,62.75,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-18,Tuesday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,68,66.02,66.02,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-18,Tuesday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,64,62.75,62.75,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-19,Wednesday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,71,68.93,66.02,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-19,Wednesday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,73,71.57,62.75,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-19,Wednesday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,71,68.93,68.93,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-19,Wednesday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,73,71.57,71.57,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-19,Wednesday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,71,68.93,68.93,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-19,Wednesday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,73,71.57,71.57,0.0,Practical,No,No,No,No,Cloudy,10
+2026-08-20,Thursday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,72,69.9,68.93,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-20,Thursday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,71,69.61,71.57,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-20,Thursday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,72,69.9,69.9,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-20,Thursday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,71,69.61,69.61,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-20,Thursday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,72,69.9,69.9,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-20,Thursday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,71,69.61,69.61,0.0,Practical,No,No,No,No,Sunny,10
+2026-08-21,Friday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,69,66.99,69.9,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-21,Friday,1,01.30 PM,02.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,72,70.59,69.61,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-21,Friday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,69,66.99,66.99,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-21,Friday,2,02.30 PM,03.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,72,70.59,70.59,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-21,Friday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,A,Computer Lab,103,69,66.99,66.99,0.0,Practical,No,No,No,No,Rainy,10
+2026-08-21,Friday,3,03.30 PM,04.30 PM,AWS Training,KN,3,MCA,B,Computer Lab,102,72,70.59,70.59,0.0,Practical,No,No,No,No,Rainy,10
